@@ -1,103 +1,84 @@
-import Image from "next/image";
+// import DarkVeil from "@/components/ui/DarkVeil/DarkVeil";
+import BlurText from "@/components/ui/BlurText/BlurText";
+import Prism from "@/components/ui/Prism/Prism";
+import TextType from "@/components/ui/TextType/TextType";
+import { GripIcon, TriangleIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    return (
+        <div className="px-4 py-10">
+            {/* hero section */}
+            <section>
+                <div className="w-full h-[600px] absolute top-0 left-0">
+                    <Prism
+                        animationType="rotate"
+                        timeScale={0.5}
+                        height={3}
+                        baseWidth={5.5}
+                        scale={3.6}
+                        hueShift={0}
+                        colorFrequency={1}
+                        noise={0.5}
+                        glow={1}
+                    />
+                </div>
+                <header className="relative z-10 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm py-4 px-8 rounded-full max-w-5xl mx-auto">
+                    <div className="text-white text-xl font-light flex items-center gap-2">
+                        <TriangleIcon strokeWidth={1.5} />
+                        <span>Erick Henrique</span>
+                    </div>
+                    <nav className="text-white text-sm flex gap-4">
+                        <Link href="/">Home</Link>
+                        <Link href="/about">About</Link>
+                        <Link href="/contact">Contact</Link>
+                    </nav>
+                </header>
+                <main className="relative z-10 mt-20 space-y-10">
+                    <div className="text-white/50 bg-white/5 backdrop-blur-sm py-2 px-6 rounded-full w-fit mx-auto flex items-center gap-2 font-light border-2 border-white/10">
+                        <GripIcon className="size-4" />
+                        <span>Seja bem vindo ao meu site!</span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="flex items-center gap-4">
+                            <BlurText
+                                text="Olá, sou"
+                                delay={150}
+                                animateBy="words"
+                                direction="top"
+                                className="text-7xl mb-5 text-white font-semibold"
+                            />
+                            <BlurText
+                                text="Erick Henrique"
+                                delay={150}
+                                animateBy="words"
+                                direction="top"
+                                className="text-7xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
+                            />
+                        </div>
+                        <BlurText
+                            text="Seu desenvolvedor fullstack."
+                            delay={150}
+                            animateBy="words"
+                            direction="bottom"
+                            className="text-5xl text-white font-semibold"
+                        />
+                        <div className="relative flex items-center justify-center mt-5">
+                            <TextType
+                                text={
+                                    "Apaixonado por tecnologia e programação eu entrego o meu melhor para a sua ideia."
+                                }
+                                typingSpeed={75}
+                                pauseDuration={1500}
+                                showCursor={true}
+                                cursorCharacter="|"
+                                className="relative z-10 text-base text-white/50 text-center px-6 w-fit mx-auto flex items-center gap-2 font-light"
+                            />
+                            <div className="bg-black/50 w-full h-10 blur-lg absolute top-0 left-0 z-0" />
+                        </div>
+                    </div>
+                </main>
+            </section>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
