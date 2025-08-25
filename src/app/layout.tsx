@@ -1,3 +1,4 @@
+import { Header } from "@/components/header";
 import { cn } from "@heroui/react";
 import type { Metadata } from "next";
 import { Great_Vibes, Poppins } from "next/font/google";
@@ -35,7 +36,10 @@ export default function RootLayout({
                     greatVibes.variable
                 )}
             >
-                <RootProviders>{children}</RootProviders>
+                <RootProviders>
+                    <Header />
+                    {children}
+                </RootProviders>
             </body>
         </html>
     );
