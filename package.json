@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@heroui/button": "^2.2.24",
+        "@heroui/navbar": "^2.2.22",
         "@heroui/react": "^2.8.2",
         "framer-motion": "^12.23.12",
         "gsap": "^3.13.0",
