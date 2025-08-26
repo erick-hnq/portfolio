@@ -31,7 +31,7 @@ export default function RootLayout({
         <html lang="en" className="dark">
             <body
                 className={cn(
-                    "antialiased min-h-screen bg-black font-sans",
+                    "antialiased min-h-screen bg-black font-sans px-4",
                     poppinsSans.className,
                     greatVibes.variable
                 )}

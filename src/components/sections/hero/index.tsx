@@ -4,17 +4,31 @@ import Prism from "@/components/ui/Prism/Prism";
 import TextType from "@/components/ui/TextType/TextType";
 import { Button } from "@heroui/button";
 import { GripIcon } from "lucide-react";
+import Link from "next/link";
 
 export function HeroSection() {
     return (
         <section>
-            <div className="w-full h-[600px] absolute top-0 left-0">
+            <div className="w-full h-[600px] absolute top-0 left-0 sm:block hidden">
                 <Prism
                     animationType="rotate"
                     timeScale={0.5}
                     height={3}
                     baseWidth={5.5}
                     scale={3.6}
+                    hueShift={0}
+                    colorFrequency={1}
+                    noise={0}
+                    glow={1}
+                />
+            </div>
+            <div className="w-full h-[600px] absolute top-0 left-0 sm:hidden block">
+                <Prism
+                    animationType="rotate"
+                    timeScale={0.5}
+                    height={2.6}
+                    baseWidth={5.5}
+                    scale={2.6}
                     hueShift={0}
                     colorFrequency={1}
                     noise={0}
@@ -33,14 +47,14 @@ export function HeroSection() {
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="text-7xl mb-5 text-white font-semibold"
+                            className="sm:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
                         />
                         <BlurText
                             text="Erick Henrique"
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="text-7xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
+                            className="sm:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                         />
                     </div>
                     <BlurText
@@ -48,32 +62,43 @@ export function HeroSection() {
                         delay={150}
                         animateBy="words"
                         direction="bottom"
-                        className="text-5xl text-white font-semibold"
+                        className="sm:text-5xl text-xl text-white font-semibold"
                     />
                     <div className="relative flex items-center justify-center mt-5">
                         <TextType
+                            initialDelay={600}
                             text={
                                 "Apaixonado por tecnologia e programação eu entrego o meu melhor para a sua ideia."
                             }
                             typingSpeed={30}
                             pauseDuration={1500}
                             showCursor={false}
-                            className="relative z-10 text-base text-white/50 text-center px-6 w-fit mx-auto flex items-center gap-2 font-light"
+                            textColors={["#d8d8d8"]}
+                            className="relative z-10 sm:text-base text-sm text-white/50 text-center px-6 w-fit mx-auto flex items-center gap-2 font-light"
                         />
-                        <div className="bg-black/50 w-full h-10 blur-lg absolute top-0 left-0 z-0" />
+                        <div className="bg-black/50 w-full h-full blur-lg absolute top-0 left-0 z-0" />
                     </div>
                 </div>
                 <div className="flex items-center justify-center gap-5">
-                    <Button size="lg" variant="shadow" color="primary">
-                        Entre em contato
-                    </Button>
-                    <Button
-                        size="lg"
-                        variant="shadow"
-                        className="bg-white/10 border-white/20 text-white backdrop-blur-sm"
-                    >
-                        Sobre mim
-                    </Button>
+                    <Link href="#contact">
+                        <Button
+                            className="text-sm sm:text-base"
+                            size="lg"
+                            variant="shadow"
+                            color="primary"
+                        >
+                            Entre em contato
+                        </Button>
+                    </Link>
+                    <Link href="#about">
+                        <Button
+                            className="bg-white/10 border-white/20 text-white backdrop-blur-sm text-sm sm:text-base"
+                            size="lg"
+                            variant="shadow"
+                        >
+                            Sobre mim
+                        </Button>
+                    </Link>
                 </div>
             </main>
         </section>
