@@ -1,7 +1,9 @@
+import LogoLoop from "@/component/ui/LogoLoop/LogoLoop";
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import Prism from "@/components/ui/Prism/Prism";
 import TextType from "@/components/ui/TextType/TextType";
+import { techs } from "@/data/techs.data";
 import { Button } from "@heroui/button";
 import { GripIcon } from "lucide-react";
 import Link from "next/link";
@@ -101,6 +103,20 @@ export function HeroSection() {
                     </Link>
                 </div>
             </main>
+            <div className="h-[200px] max-w-5xl mx-auto relative overflow-hidden mt-10">
+                <LogoLoop
+                    logos={techs}
+                    speed={60}
+                    direction="left"
+                    logoHeight={30}
+                    gap={40}
+                    pauseOnHover
+                    scaleOnHover
+                    fadeOut
+                    fadeOutColor="#000000"
+                    ariaLabel="Technology partners"
+                />
+            </div>
         </section>
     );
 }
