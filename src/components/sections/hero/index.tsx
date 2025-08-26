@@ -111,7 +111,6 @@ export function HeroSection() {
                     logoHeight={30}
                     gap={40}
                     pauseOnHover
-                    scaleOnHover
                     fadeOut
                     fadeOutColor="#000000"
                     ariaLabel="Technology partners"
