@@ -1,6 +1,6 @@
-import LogoLoop from "@/component/ui/LogoLoop/LogoLoop";
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
+import LogoLoop from "@/components/ui/LogoLoop/LogoLoop";
 import Prism from "@/components/ui/Prism/Prism";
 import TextType from "@/components/ui/TextType/TextType";
 import { techs } from "@/data/techs.data";
