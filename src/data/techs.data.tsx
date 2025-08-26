@@ -41,7 +41,6 @@ import VercelIcon from "@/components/icons/VercelIcon";
 import DockerIcon from "@/components/icons/DockerIcon";
 import GitIcon from "@/components/icons/GitIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
-import KubernetesIcon from "@/components/icons/KubernetesIcon";
 
 // Testing & Quality
 import CypressIcon from "@/components/icons/CypressIcon";
@@ -49,9 +48,6 @@ import ESLintIcon from "@/components/icons/ESLintIcon";
 import JestIcon from "@/components/icons/JestIcon";
 
 // API & Data
-import ApolloIcon from "@/components/icons/ApolloIcon";
-import AxiosIcon from "@/components/icons/AxiosIcon";
-import GraphQLIcon from "@/components/icons/GraphQLIcon";
 import TanStackIcon from "@/components/icons/TanStackIcon";
 
 // Authentication & Security
@@ -67,12 +63,16 @@ import MercadoPagoIcon from "@/components/icons/MercadoPagoIcon";
 import StripeIcon from "@/components/icons/StripeIcon";
 
 // Message Queues & Cache
-import BullMQIcon from "@/components/icons/BullMQIcon";
-import RabbitMQIcon from "@/components/icons/RabbitMQIcon";
 
 // Design & Animation
+import ApolloIcon from "@/components/icons/ApolloIcon";
+import AxiosIcon from "@/components/icons/AxiosIcon";
+import BullMQIcon from "@/components/icons/BullMQIcon";
 import FigmaIcon from "@/components/icons/FigmaIcon";
+import GraphQLIcon from "@/components/icons/GraphQLIcon";
+import KubernetesIcon from "@/components/icons/KubernetesIcon";
 import MotionIcon from "@/components/icons/MotionIcon";
+import RabbitMQIcon from "@/components/icons/RabbitMQIcon";
 
 export const techs = [
     // Frontend Frameworks & Libraries
