@@ -44,6 +44,7 @@ export function Timeline() {
                 <div className="relative">
                     {/* Linha central vertical */}
                     <motion.div
+                        viewport={{ once: true }}
                         initial={{ y: "-150%" }}
                         animate={{ y: "0%" }}
                         transition={{ duration: 3, delay: 0.5 }}
@@ -56,10 +57,11 @@ export function Timeline() {
                             const Icon = step.icon;
                             return (
                                 <motion.div
+                                    viewport={{ once: true }}
                                     key={step.id}
-                                    className="relative"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
+                                    className="relative overflow-hidden"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
                                     transition={{
                                         duration: 0.5,
                                         delay: 0.8 * (index + 1),
@@ -80,64 +82,72 @@ export function Timeline() {
                                                     : "pr-16"
                                             }`}
                                         >
-                                            <div className="border border-white/50 rounded-xl p-6  backdrop-blur-sm relative">
-                                                <div className="flex items-center gap-3 mb-3">
-                                                    <Icon className="w-5 h-5 text-white/70" />
-                                                    <h3 className="font-semibold text-lg">
-                                                        {step.id}. {step.title}
-                                                    </h3>
-                                                </div>
-                                                <p className="text-white/70 text-sm leading-relaxed">
-                                                    {step.description}
-                                                </p>
+                                            <div className="p-[1px] bg-gradient-to-br from-white/10 via-white/50 to-white/10 rounded-xl">
+                                                <div className="bg-black/60 backdrop-blur-sm rounded-xl p-6 relative">
+                                                    <div className="flex items-center gap-3 mb-3">
+                                                        <Icon className="w-5 h-5 text-white/70" />
+                                                        <h3 className="font-semibold text-lg">
+                                                            {step.id}.{" "}
+                                                            {step.title}
+                                                        </h3>
+                                                    </div>
+                                                    <p className="text-white/70 text-sm leading-relaxed">
+                                                        {step.description}
+                                                    </p>
 
-                                                {/* Linha horizontal - vai do card até a linha central */}
-                                                <motion.div
-                                                    initial={{ width: 0 }}
-                                                    animate={{
-                                                        width:
+                                                    {/* Linha horizontal - vai do card até a linha central */}
+                                                    <motion.div
+                                                        viewport={{
+                                                            once: true,
+                                                        }}
+                                                        initial={{ width: 0 }}
+                                                        animate={{
+                                                            width:
+                                                                step.side ===
+                                                                "right"
+                                                                    ? "calc(4rem + 25.6%)"
+                                                                    : "calc(4rem + 25.6%)",
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.5,
+                                                            delay:
+                                                                0.8 *
+                                                                (index + 1),
+                                                        }}
+                                                        className={`absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40 ${
                                                             step.side ===
                                                             "right"
-                                                                ? "calc(4rem + 25.6%)"
-                                                                : "calc(4rem + 25.6%)",
-                                                    }}
-                                                    transition={{
-                                                        duration: 0.5,
-                                                        delay:
-                                                            0.8 * (index + 1),
-                                                    }}
-                                                    className={`absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40 ${
-                                                        step.side === "right"
-                                                            ? "-left-[calc(4rem_+_25.6%)]"
-                                                            : "-right-[calc(4rem_+_25.6%)]"
-                                                    }`}
-                                                    style={{
-                                                        width:
-                                                            step.side ===
-                                                            "right"
-                                                                ? "calc(4rem + 25.6%)"
-                                                                : "calc(4rem + 25.6%)",
-                                                    }}
-                                                >
-                                                    {/* Ponto de conexão no card */}
-                                                    <div
-                                                        className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
-                                                            step.side ===
-                                                            "right"
-                                                                ? "right-0"
-                                                                : "left-0"
+                                                                ? "-left-[calc(4rem_+_25.6%)]"
+                                                                : "-right-[calc(4rem_+_25.6%)]"
                                                         }`}
-                                                    ></div>
-                                                    {/* Ponto de conexão na linha central */}
-                                                    <div
-                                                        className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
-                                                            step.side ===
-                                                            "right"
-                                                                ? "left-0"
-                                                                : "right-0"
-                                                        }`}
-                                                    ></div>
-                                                </motion.div>
+                                                        style={{
+                                                            width:
+                                                                step.side ===
+                                                                "right"
+                                                                    ? "calc(4rem + 25.6%)"
+                                                                    : "calc(4rem + 25.6%)",
+                                                        }}
+                                                    >
+                                                        {/* Ponto de conexão no card */}
+                                                        <div
+                                                            className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
+                                                                step.side ===
+                                                                "right"
+                                                                    ? "right-0"
+                                                                    : "left-0"
+                                                            }`}
+                                                        ></div>
+                                                        {/* Ponto de conexão na linha central */}
+                                                        <div
+                                                            className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
+                                                                step.side ===
+                                                                "right"
+                                                                    ? "left-0"
+                                                                    : "right-0"
+                                                            }`}
+                                                        ></div>
+                                                    </motion.div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
