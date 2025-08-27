@@ -22,7 +22,7 @@ export function Header() {
     return (
         <Navbar
             position="sticky"
-            className="z-10 inset-0 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm rounded-full max-w-5xl mx-auto sm:mt-10 mt-5"
+            className="z-50 inset-0 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm rounded-full max-w-5xl mx-auto sm:mt-10 mt-5"
             onMenuOpenChange={setIsMenuOpen}
         >
             <NavbarContent>

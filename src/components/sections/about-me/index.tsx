@@ -1,7 +1,9 @@
 import GithubIcon from "@/components/icons/GithubIcon";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import { AnimatedUnderline } from "@/components/shared/AnimatedUnderline";
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
+import FadeContent from "@/components/ui/FadeContent/FadeContent";
 import { Avatar } from "@heroui/avatar";
 import { Button } from "@heroui/button";
 import { Tooltip } from "@heroui/tooltip";
@@ -39,7 +41,7 @@ export function AboutMeSection() {
                 direction="bottom"
                 className="sm:text-5xl text-xl text-white font-semibold"
             />
-            <main className="flex flex-col items-center justify-center gap-4 w-full mt-10">
+            <main className="flex flex-col items-center justify-center w-full mt-10">
                 <div className="flex flex-col w-full">
                     <div className="flex items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent p-4 rounded-xl rounded-b-none">
                         <div className="flex items-center gap-4">
@@ -124,19 +126,39 @@ export function AboutMeSection() {
                             </Link>
                         </div>
                     </div>
-                    <div className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
-                        <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none p-4">
+                    <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
+                        <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">
                             <p className="text-white/50 text-sm">
-                                Olá, sou Erick, um desenvolvedor fullstack com
-                                paixão por criar soluções tecnológicas que
-                                impactam a vida das pessoas.
+                                Aos 20 anos de idade e com{" "}
+                                <AnimatedUnderline>
+                                    mais de cinco anos de experiência/estudo em
+                                    programação,
+                                </AnimatedUnderline>{" "}
+                                hoje venho me especializando em desenvolvimento
+                                web, com foco em tecnologias modernas e práticas
+                                de desenvolvimento ágil.
                             </p>
                             <p className="text-white/50 text-sm">
-                                Sou apaixonado por tecnologia e por criar
-                                soluções que impactam a vida das pessoas.
+                                Atualmente estou trabalhando como desenvolvedor
+                                freelancer,{" "}
+                                <AnimatedUnderline>
+                                    o que fortaleceu ainda mais minha
+                                    experiência na área,
+                                </AnimatedUnderline>{" "}
+                                e me fez aprender a lidar com diferentes tipos
+                                de projetos e clientes.
+                            </p>
+                            <p className="text-white/50 text-sm">
+                                <AnimatedUnderline>
+                                    Estou totalmente aberto a novas
+                                    oportunidades e desafios,
+                                </AnimatedUnderline>{" "}
+                                então se você tem um projeto em mente ou uma
+                                vaga de emprego que se encaixe com o meu perfil,
+                                não hesite em me contatar!
                             </p>
                         </div>
-                    </div>
+                    </FadeContent>
                 </div>
                 <Timeline />
             </main>

@@ -39,20 +39,20 @@ export function Timeline() {
     ];
 
     return (
-        <div className="text-white p-8 min-h-screen overflow-hidden">
+        <div className="text-white overflow-hidden w-full">
             <div className="max-w-6xl mx-auto">
                 <div className="relative">
                     {/* Linha central vertical */}
                     <motion.div
                         viewport={{ once: true }}
-                        initial={{ y: "-150%" }}
+                        initial={{ y: "-100%" }}
                         animate={{ y: "0%" }}
-                        transition={{ duration: 3, delay: 0.5 }}
-                        className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-white/30"
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-[calc(100%_+_100px)] bg-white/30"
                     ></motion.div>
 
                     {/* Steps */}
-                    <div className="space-y-20">
+                    <div className="space-y-10">
                         {steps.map((step, index) => {
                             const Icon = step.icon;
                             return (
@@ -69,7 +69,7 @@ export function Timeline() {
                                 >
                                     {/* Card - posicionado primeiro para definir a altura */}
                                     <div
-                                        className={`flex ${
+                                        className={`flex mt-10 ${
                                             step.side === "right"
                                                 ? "justify-end"
                                                 : "justify-start"

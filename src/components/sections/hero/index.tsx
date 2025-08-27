@@ -103,7 +103,7 @@ export function HeroSection() {
                     </Link>
                 </div>
             </main>
-            <div className="h-[200px] max-w-5xl mx-auto relative overflow-hidden mt-10">
+            <div className="h-[200px] max-w-5xl mx-auto relative overflow-hidden mt-20">
                 <LogoLoop
                     logos={techs}
                     speed={60}
