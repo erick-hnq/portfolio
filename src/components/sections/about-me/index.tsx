@@ -42,9 +42,9 @@ export function AboutMeSection() {
                 className="sm:text-5xl text-xl text-white font-semibold"
             />
             <main className="flex flex-col items-center justify-center w-full mt-10">
-                <div className="flex flex-col w-full">
-                    <div className="flex items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent p-4 rounded-xl rounded-b-none">
-                        <div className="flex items-center gap-4">
+                <div className="flex flex-col w-full relative z-10">
+                    <div className="sticky top-16 z-10 flex items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none">
+                        <div className="flex items-center gap-4 ">
                             <Avatar
                                 fallback
                                 className="w-20 h-20 text-large shadow shadow-primary/50"
