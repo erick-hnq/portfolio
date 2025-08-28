@@ -16,6 +16,7 @@ import {
     ScanSearchIcon,
     ShieldCheck,
     SparklesIcon,
+    TriangleIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -133,15 +134,20 @@ export function WhatIDoTimeline() {
                         initial={{ height: "0%" }}
                         whileInView={{ height: "100%" }}
                         transition={{ duration: 3, delay: 0.5 }}
-                        className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-[calc(100%_+_100px)] bg-white/30"
-                    ></motion.div>
+                        className="sm:block hidden absolute left-1/2 transform -translate-x-1/2 w-0.5 h-[calc(100%_+_100px)] bg-white/30"
+                    >
+                        <TriangleIcon className="size-4 rotate-180 absolute -bottom-0 fill-white/30 backdrop-blur-md text-white/30 left-1/2 transform -translate-x-1/2" />
+                    </motion.div>
 
                     {/* Steps */}
-                    <div className="space-y-10">
+                    <div className="sm:space-y-10 space-y-5">
                         {steps.map((step, index) => {
                             const Icon = step.icon;
                             return (
-                                <div key={step.id} className="relative h-80">
+                                <div
+                                    key={step.id}
+                                    className="relative sm:h-80 h-auto"
+                                >
                                     <motion.div
                                         viewport={{ once: true }}
                                         className="sticky top-10 overflow-hidden"
@@ -161,16 +167,16 @@ export function WhatIDoTimeline() {
                                             className={cn(
                                                 "flex flex-col mt-10",
                                                 step.side === "right"
-                                                    ? "items-end"
-                                                    : "items-start"
+                                                    ? "sm:items-end items-center"
+                                                    : "sm:items-start items-center"
                                             )}
                                         >
                                             <div
                                                 className={cn(
-                                                    "w-5/12",
+                                                    "w-full sm:w-1/2",
                                                     step.side === "right"
-                                                        ? "pl-16"
-                                                        : "pr-16"
+                                                        ? "sm:pl-16 pl-0"
+                                                        : "sm:pr-16 pr-0"
                                                 )}
                                             >
                                                 <div className="p-[1px] bg-gradient-to-br from-white/10 via-white/50 to-white/10 rounded-xl">
@@ -197,20 +203,20 @@ export function WhatIDoTimeline() {
                                                             }}
                                                             whileInView={{
                                                                 opacity: 1,
-                                                                width: "calc(4rem + 25.6%)",
+                                                                width: "4.4em",
                                                             }}
                                                             transition={{
                                                                 duration: 0.5,
                                                                 delay:
-                                                                    0.5 *
+                                                                    0.8 *
                                                                     (index + 1),
                                                             }}
                                                             className={cn(
-                                                                "absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40",
+                                                                "absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40 sm:block hidden",
                                                                 step.side ===
                                                                     "right"
-                                                                    ? "-left-[calc(4rem_+_25.6%)]"
-                                                                    : "-right-[calc(4rem_+_25.6%)]"
+                                                                    ? "-left-[4.4em]"
+                                                                    : "-right-[4.4em]"
                                                             )}
                                                         >
                                                             {/* Ponto de conexão no card */}

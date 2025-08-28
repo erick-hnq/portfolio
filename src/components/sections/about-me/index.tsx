@@ -20,14 +20,14 @@ export function AboutMeSection() {
                     delay={150}
                     animateBy="words"
                     direction="top"
-                    className="sm:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
+                    className="sm:text-7xl text-4xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                 />
                 <BlurText
                     text="sou eu?"
                     delay={150}
                     animateBy="words"
                     direction="top"
-                    className="sm:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
+                    className="sm:text-7xl text-4xl sm:mb-5 mb-3 text-white font-semibold break"
                 />
             </div>
             <BlurText
@@ -35,11 +35,11 @@ export function AboutMeSection() {
                 delay={150}
                 animateBy="words"
                 direction="bottom"
-                className="sm:text-5xl text-xl text-white font-semibold"
+                className="sm:text-5xl text-2xl text-white font-semibold"
             />
             <main className="flex flex-col items-center justify-center w-full mt-10">
                 <div className="flex flex-col w-full relative z-10">
-                    <div className="sticky top-16 z-10 flex items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none">
+                    <div className="sticky top-16 z-10 flex sm:flex-row flex-col items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none">
                         <div className="flex items-center gap-4 ">
                             <Avatar
                                 fallback
@@ -55,7 +55,7 @@ export function AboutMeSection() {
                                 </p>
                             </div>
                         </div>
-                        <SocialButtonsGroup />
+                        <SocialButtonsGroup className="sm:self-start self-center" />
                     </div>
                     <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
                         <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">

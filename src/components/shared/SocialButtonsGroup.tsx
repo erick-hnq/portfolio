@@ -1,13 +1,18 @@
 import { Button } from "@heroui/button";
+import { cn } from "@heroui/react";
 import { Tooltip } from "@heroui/tooltip";
 import { DownloadIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
+import { ComponentProps } from "react";
 import GithubIcon from "../icons/GithubIcon";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
 
-export function SocialButtonsGroup() {
+export function SocialButtonsGroup(props: ComponentProps<"div">) {
     return (
-        <div className="flex items-center self-start gap-2">
+        <div
+            {...props}
+            className={cn("flex items-center gap-2", props.className)}
+        >
             <Link href="https://github.com/Erick244" target="_blank">
                 <Tooltip content="Acessar Github">
                     <Button
