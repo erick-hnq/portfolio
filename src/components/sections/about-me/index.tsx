@@ -1,15 +1,11 @@
-import GithubIcon from "@/components/icons/GithubIcon";
-import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { AnimatedUnderline } from "@/components/shared/AnimatedUnderline";
 import { Badge } from "@/components/shared/Badge";
+import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import FadeContent from "@/components/ui/FadeContent/FadeContent";
 import { Avatar } from "@heroui/avatar";
-import { Button } from "@heroui/button";
-import { Tooltip } from "@heroui/tooltip";
-import { DownloadIcon, GemIcon, MailIcon } from "lucide-react";
-import Link from "next/link";
-import { Timeline } from "./Timeline";
+import { GemIcon } from "lucide-react";
+import { WhatIDoTimeline } from "./WhatIDoTimeline";
 
 export function AboutMeSection() {
     return (
@@ -59,72 +55,7 @@ export function AboutMeSection() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center self-start gap-2">
-                            <Link
-                                href="https://github.com/Erick244"
-                                target="_blank"
-                            >
-                                <Tooltip content="Acessar Github">
-                                    <Button
-                                        variant="bordered"
-                                        isIconOnly
-                                        className="bg-content2"
-                                    >
-                                        <GithubIcon className="size-4" />
-                                        <span className="sr-only">Github</span>
-                                    </Button>
-                                </Tooltip>
-                            </Link>
-                            <Link
-                                href="mailto:erickcontato01@gmail.com"
-                                target="_blank"
-                            >
-                                <Tooltip content="Enviar E-mail">
-                                    <Button
-                                        variant="bordered"
-                                        isIconOnly
-                                        className="bg-content2"
-                                    >
-                                        <MailIcon className="size-4" />
-                                        <span className="sr-only">E-mail</span>
-                                    </Button>
-                                </Tooltip>
-                            </Link>
-                            <Link
-                                href="https://wa.me/5512997896834"
-                                target="_blank"
-                            >
-                                <Tooltip content="Enviar WhatsApp">
-                                    <Button
-                                        variant="bordered"
-                                        isIconOnly
-                                        className="bg-content2"
-                                    >
-                                        <WhatsAppIcon className="size-4" />
-                                        <span className="sr-only">
-                                            WhatsApp
-                                        </span>
-                                    </Button>
-                                </Tooltip>
-                            </Link>
-                            <Link
-                                href="/cv.pdf"
-                                download="ERICK-HENRIQUE-CV.pdf"
-                            >
-                                <Tooltip content="Download Curriculum">
-                                    <Button
-                                        variant="bordered"
-                                        isIconOnly
-                                        className="bg-content2"
-                                    >
-                                        <DownloadIcon className="size-4" />
-                                        <span className="sr-only">
-                                            Curriculum
-                                        </span>
-                                    </Button>
-                                </Tooltip>
-                            </Link>
-                        </div>
+                        <SocialButtonsGroup />
                     </div>
                     <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
                         <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">
@@ -160,7 +91,7 @@ export function AboutMeSection() {
                         </div>
                     </FadeContent>
                 </div>
-                <Timeline />
+                <WhatIDoTimeline />
             </main>
         </section>
     );

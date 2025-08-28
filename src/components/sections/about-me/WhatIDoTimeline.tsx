@@ -5,6 +5,7 @@ import GithubIcon from "@/components/icons/GithubIcon";
 import GitIcon from "@/components/icons/GitIcon";
 import { LighthouseIcon } from "@/components/icons/LighthouseIcon";
 import NotionIcon from "@/components/icons/NotionIcon";
+import { cn } from "@heroui/react";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 import {
@@ -18,110 +19,110 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export function Timeline() {
-    const steps = [
-        {
-            id: 1,
-            title: "Planejamento",
-            icon: Brain,
-            description:
-                "Para criar algo incrível, é preciso primeiro falar sobre os detalhes. O planejamento é essencial.",
-            side: "left",
-            apps: [
-                {
-                    name: "GitHub",
-                    icon: <GithubIcon />,
-                    href: "https://github.com/",
-                },
-                {
-                    name: "Notion",
-                    icon: <NotionIcon />,
-                    href: "https://www.notion.com/",
-                },
-                {
-                    name: "Inteligência Artificial",
-                    icon: <SparklesIcon className="size-4" />,
-                    href: "#",
-                },
-            ],
-        },
-        {
-            id: 2,
-            title: "Wireframe/Design",
-            icon: PencilRuler,
-            description:
-                "O wireframe é a estrutura básica do projeto. O design é a cara do projeto.",
-            side: "right",
-            apps: [
-                {
-                    name: "Figma",
-                    icon: <FigmaIcon />,
-                    href: "https://www.figma.com/",
-                },
-                {
-                    name: "Criatividade",
-                    icon: <BrainIcon className="size-4" />,
-                    href: "#",
-                },
-                {
-                    name: "Inteligência Artificial",
-                    icon: <SparklesIcon className="size-4" />,
-                    href: "#",
-                },
-            ],
-        },
-        {
-            id: 3,
-            title: "Desenvolvimento",
-            icon: Code,
-            description:
-                "O desenvolvimento é a parte que torna o projeto real. É a parte que torna o projeto funcional.",
-            side: "left",
-            apps: [
-                {
-                    name: "Cursor",
-                    icon: <CursorIcon />,
-                    href: "https://www.cursor.com/",
-                },
-                {
-                    name: "Git",
-                    icon: <GitIcon />,
-                    href: "https://www.git-scm.com/",
-                },
-                {
-                    name: "Github",
-                    icon: <GithubIcon />,
-                    href: "https://github.com/",
-                },
-            ],
-        },
-        {
-            id: 4,
-            title: "Garantia de Qualidade",
-            icon: ShieldCheck,
-            description:
-                "A garantia de qualidade é a parte que garante que o projeto funcione corretamente e seja de alta qualidade/performance.",
-            side: "right",
-            apps: [
-                {
-                    name: "Github (Verificação de Bugs)",
-                    icon: <GithubIcon />,
-                    href: "https://github.com/",
-                },
-                {
-                    name: "Lighthouse (Performance)",
-                    icon: <LighthouseIcon />,
-                    href: "https://developer.chrome.com/docs/lighthouse/overview?hl=pt-br",
-                },
-                {
-                    name: "Revisão de Código",
-                    icon: <ScanSearchIcon className="size-4" />,
-                    href: "#",
-                },
-            ],
-        },
-    ];
+const steps = [
+    {
+        id: 1,
+        title: "Planejamento",
+        icon: Brain,
+        description:
+            "Para criar algo incrível, é preciso primeiro falar sobre os detalhes. O planejamento é essencial.",
+        side: "left",
+        apps: [
+            {
+                name: "GitHub",
+                icon: <GithubIcon />,
+                href: "https://github.com/",
+            },
+            {
+                name: "Notion",
+                icon: <NotionIcon />,
+                href: "https://www.notion.com/",
+            },
+            {
+                name: "Inteligência Artificial",
+                icon: <SparklesIcon className="size-4" />,
+                href: "#",
+            },
+        ],
+    },
+    {
+        id: 2,
+        title: "Wireframe/Design",
+        icon: PencilRuler,
+        description:
+            "O wireframe é a estrutura básica do projeto. O design é a cara do projeto.",
+        side: "right",
+        apps: [
+            {
+                name: "Figma",
+                icon: <FigmaIcon />,
+                href: "https://www.figma.com/",
+            },
+            {
+                name: "Criatividade",
+                icon: <BrainIcon className="size-4" />,
+                href: "#",
+            },
+            {
+                name: "Inteligência Artificial",
+                icon: <SparklesIcon className="size-4" />,
+                href: "#",
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: "Desenvolvimento",
+        icon: Code,
+        description:
+            "O desenvolvimento é a parte que torna o projeto real. É a parte que torna o projeto funcional.",
+        side: "left",
+        apps: [
+            {
+                name: "Cursor",
+                icon: <CursorIcon />,
+                href: "https://www.cursor.com/",
+            },
+            {
+                name: "Git",
+                icon: <GitIcon />,
+                href: "https://www.git-scm.com/",
+            },
+            {
+                name: "Github",
+                icon: <GithubIcon />,
+                href: "https://github.com/",
+            },
+        ],
+    },
+    {
+        id: 4,
+        title: "Garantia de Qualidade",
+        icon: ShieldCheck,
+        description:
+            "A garantia de qualidade é a parte que garante que o projeto funcione corretamente e seja de alta qualidade/performance.",
+        side: "right",
+        apps: [
+            {
+                name: "Github (Verificação de Bugs)",
+                icon: <GithubIcon />,
+                href: "https://github.com/",
+            },
+            {
+                name: "Lighthouse (Performance)",
+                icon: <LighthouseIcon />,
+                href: "https://developer.chrome.com/docs/lighthouse/overview?hl=pt-br",
+            },
+            {
+                name: "Revisão de Código",
+                icon: <ScanSearchIcon className="size-4" />,
+                href: "#",
+            },
+        ],
+    },
+];
 
+export function WhatIDoTimeline() {
     return (
         <div className="text-white  w-full">
             <div className="max-w-6xl mx-auto">
@@ -157,18 +158,20 @@ export function Timeline() {
                                     >
                                         {/* Card - posicionado primeiro para definir a altura */}
                                         <div
-                                            className={`flex flex-col mt-10 ${
+                                            className={cn(
+                                                "flex flex-col mt-10",
                                                 step.side === "right"
                                                     ? "items-end"
                                                     : "items-start"
-                                            }`}
+                                            )}
                                         >
                                             <div
-                                                className={`w-5/12 ${
+                                                className={cn(
+                                                    "w-5/12",
                                                     step.side === "right"
                                                         ? "pl-16"
                                                         : "pr-16"
-                                                }`}
+                                                )}
                                             >
                                                 <div className="p-[1px] bg-gradient-to-br from-white/10 via-white/50 to-white/10 rounded-xl">
                                                     <div className="bg-black/60 backdrop-blur-sm rounded-xl p-6 relative flex flex-col justify-between">
@@ -202,30 +205,33 @@ export function Timeline() {
                                                                     0.5 *
                                                                     (index + 1),
                                                             }}
-                                                            className={`absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40 ${
+                                                            className={cn(
+                                                                "absolute top-1/2 transform -translate-y-1/2 h-0.5 bg-white/40",
                                                                 step.side ===
-                                                                "right"
+                                                                    "right"
                                                                     ? "-left-[calc(4rem_+_25.6%)]"
                                                                     : "-right-[calc(4rem_+_25.6%)]"
-                                                            }`}
+                                                            )}
                                                         >
                                                             {/* Ponto de conexão no card */}
                                                             <div
-                                                                className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
+                                                                className={cn(
+                                                                    "absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full",
                                                                     step.side ===
-                                                                    "right"
+                                                                        "right"
                                                                         ? "right-0"
                                                                         : "left-0"
-                                                                }`}
+                                                                )}
                                                             ></div>
                                                             {/* Ponto de conexão na linha central */}
                                                             <div
-                                                                className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full ${
+                                                                className={cn(
+                                                                    "absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full",
                                                                     step.side ===
-                                                                    "right"
+                                                                        "right"
                                                                         ? "left-0"
                                                                         : "right-0"
-                                                                }`}
+                                                                )}
                                                             ></div>
                                                         </motion.div>
 
