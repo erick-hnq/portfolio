@@ -1,6 +1,7 @@
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import { BriefcaseIcon } from "lucide-react";
+import { ProjectCard } from "./ProjectCard";
 
 export function ProjectsSection() {
     return (
@@ -34,7 +35,9 @@ export function ProjectsSection() {
                     className="sm:text-7xl text-4xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                 />
             </div>
-            <main className="flex flex-col items-center justify-center w-full mt-10"></main>
+            <main className="flex flex-col items-center justify-center w-full mt-10">
+                <ProjectCard />
+            </main>
         </section>
     );
 }

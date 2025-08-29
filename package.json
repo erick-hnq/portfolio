@@ -11,6 +11,7 @@
     "dependencies": {
         "@heroui/avatar": "^2.2.20",
         "@heroui/button": "^2.2.24",
+        "@heroui/modal": "^2.2.21",
         "@heroui/navbar": "^2.2.22",
         "@heroui/react": "^2.8.2",
         "@heroui/tooltip": "^2.2.21",
