@@ -18,8 +18,16 @@ export function ProjectCard() {
 
     return (
         <div>
-            <div className="w-96 h-52 bg-content2 rounded-xl cursor-zoom-in">
-                <div onClick={onOpen} className="h-full w-full" />
+            <div className="w-96 h-52 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden">
+                <div
+                    onClick={onOpen}
+                    className="inset-0 absolute h-full w-full"
+                />
+                <video
+                    src="/videos/ponto-pei.mp4"
+                    className="w-full h-full"
+                    autoPlay
+                ></video>
                 <Modal
                     size="2xl"
                     backdrop="blur"
