@@ -13,7 +13,7 @@ export function SocialButtonsGroup(props: ComponentProps<"div">) {
             {...props}
             className={cn("flex items-center gap-2", props.className)}
         >
-            <Link href="https://github.com/Erick244" target="_blank">
+            <Link href="https://github.com/erick-hnq" target="_blank">
                 <Tooltip content="Acessar Github">
                     <Button
                         variant="bordered"

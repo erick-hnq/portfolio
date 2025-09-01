@@ -1,6 +1,8 @@
 "use client";
 
 import GithubIcon from "@/components/icons/GithubIcon";
+import Carousel from "@/components/ui/Carousel/Carousel";
+import { Project } from "@/models/interfaces/project.interface";
 import { Button } from "@heroui/button";
 import {
     Modal,
@@ -10,121 +12,173 @@ import {
     ModalHeader,
     useDisclosure,
 } from "@heroui/modal";
+import { cn } from "@heroui/react";
 import { Tooltip } from "@heroui/tooltip";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
-export function ProjectCard() {
-    const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+interface ProjectCardProps {
+    project: Project;
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
-        <div>
-            <div className="w-96 h-52 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden">
+        <div className="max-w-[500px] w-full">
+            <div className="w-full h-64 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group">
                 <div
                     onClick={onOpen}
-                    className="inset-0 absolute h-full w-full"
+                    className="inset-0 absolute h-full w-full group-hover:opacity-30 opacity-0 bg-gradient-to-r from-black from-10% via-transparent to-black to-90% transition-all duration-300"
                 />
-                <video
-                    src="/videos/ponto-pei.mp4"
-                    className="w-full h-full"
-                    autoPlay
-                ></video>
+                {project.videoSrc ? (
+                    <video
+                        src={project.videoSrc}
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                    />
+                ) : (
+                    <Carousel
+                        cardOnClick={() => onOpenChange()}
+                        items={project.carousel}
+                        baseWidth={500}
+                        autoplay={true}
+                        autoplayDelay={3000}
+                        pauseOnHover={true}
+                        loop={false}
+                        round={false}
+                    />
+                )}
                 <Modal
-                    size="2xl"
+                    size="5xl"
                     backdrop="blur"
                     isOpen={isOpen}
                     onOpenChange={onOpenChange}
                     classNames={{
                         backdrop: "bg-background/10",
                     }}
-                    className="cursor-zoom-out"
-                    onClick={onClose}
                 >
                     <ModalContent>
-                        <ModalHeader className="flex flex-col gap-1">
-                            <h1>Projeto 1</h1>
+                        <ModalHeader className="flex flex-col gap-2">
+                            <div className="flex gap-2 items-center">
+                                <h1>{project.title}</h1>
+                                <div className="text-xs bg-content3 w-fit px-2 py-2 rounded-full">
+                                    {project.role}
+                                </div>
+                            </div>
                             <p className="text-xs font-normal">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Dolor quibusdam commodi
-                                doloremque repellendus amet vero tempore
-                                aspernatur sapiente, nisi reprehenderit dolore
-                                eum? Natus officia non quasi recusandae
-                                repellendus sed modi.
+                                {project.description}
                             </p>
                         </ModalHeader>
-                        <ModalBody>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam pulvinar risus non risus
-                                hendrerit venenatis. Pellentesque sit amet
-                                hendrerit risus, sed porttitor quam.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam pulvinar risus non risus
-                                hendrerit venenatis. Pellentesque sit amet
-                                hendrerit risus, sed porttitor quam.
-                            </p>
-                            <p>
-                                Magna exercitation reprehenderit magna aute
-                                tempor cupidatat consequat elit dolor
-                                adipisicing. Mollit dolor eiusmod sunt ex
-                                incididunt cillum quis. Velit duis sit officia
-                                eiusmod Lorem aliqua enim laboris do dolor
-                                eiusmod. Et mollit incididunt nisi consectetur
-                                esse laborum eiusmod pariatur proident Lorem
-                                eiusmod et. Culpa deserunt nostrud ad veniam.
-                            </p>
+                        <ModalBody className="flex justify-center items-center">
+                            {project.videoSrc ? (
+                                <video
+                                    src={project.videoSrc}
+                                    className="w-full h-full rounded-xl"
+                                    controls
+                                    muted
+                                ></video>
+                            ) : (
+                                <div>
+                                    <div className="sm:hidden block">
+                                        <Carousel
+                                            items={project.carousel}
+                                            baseWidth={386}
+                                            autoplay={true}
+                                            autoplayDelay={3000}
+                                            pauseOnHover={true}
+                                            loop={false}
+                                            round={false}
+                                        />
+                                    </div>
+                                    <div className="sm:block hidden">
+                                        <Carousel
+                                            items={project.carousel}
+                                            baseWidth={700}
+                                            autoplay={true}
+                                            autoplayDelay={3000}
+                                            pauseOnHover={true}
+                                            loop={false}
+                                            round={false}
+                                        />
+                                    </div>
+                                </div>
+                            )}
                         </ModalBody>
-                        <ModalFooter>
-                            <Button
-                                color="danger"
-                                variant="light"
-                                onPress={onClose}
-                            >
-                                Close
-                            </Button>
-                            <Button color="primary" onPress={onClose}>
-                                Action
-                            </Button>
+                        <ModalFooter className="flex flex-wrap justify-start gap-2">
+                            {project.tags.map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="bg-content2 rounded-full py-1 px-3 text-[0.6rem]"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
                         </ModalFooter>
                     </ModalContent>
                 </Modal>
             </div>
-            <div>
-                <h1 className="text-2xl my-3">Projeto 1</h1>
-                <div className="mb-2 font-semibold">
-                    Desenvolvedor Fullstack
-                </div>
-                <p className="max-w-96 text-justify text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                    nobis architecto pariatur placeat voluptate esse nemo
-                    corrupti in a, veritatis, at sit et dolor consequuntur.
-                    Ducimus distinctio omnis vero quaerat.
+            <div className="w-full">
+                <h1 className="text-2xl my-3">{project.title}</h1>
+                <div className="mb-2 font-semibold">{project.role}</div>
+                <p className="w-full text-justify text-sm">
+                    {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs my-3">
-                    <span className="bg-content2 rounded-full py-2 px-3">
-                        NextJS
-                    </span>
-                    <span className="bg-content2 rounded-full py-2 px-3">
-                        CSS
-                    </span>
-                    <span className="bg-content2 rounded-full py-2 px-3">
-                        HTML
-                    </span>
+                <div className="flex flex-wrap gap-2 my-3">
+                    {project.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="bg-content2 rounded-full py-1 px-3 text-[0.6rem]"
+                        >
+                            {tag}
+                        </span>
+                    ))}
                 </div>
             </div>
             <div className="flex gap-2">
-                <Tooltip content="Ver no GitHub">
-                    <Button size="sm" className="bg-content2">
-                        <GithubIcon />
-                        Código
-                    </Button>
+                <Tooltip
+                    content={
+                        project.github ? "Acessar Código" : "Código Privado"
+                    }
+                >
+                    <Link href={project?.github || "#"}>
+                        <Button
+                            size="sm"
+                            disabled={!project.github}
+                            className={cn(
+                                "bg-content2",
+                                project.github
+                                    ? "opacity-100"
+                                    : "opacity-80 cursor-no-drop"
+                            )}
+                        >
+                            <GithubIcon />
+                            Código
+                        </Button>
+                    </Link>
                 </Tooltip>
-                <Tooltip content="Acessar website">
-                    <Button size="sm" color="secondary">
-                        <ArrowUpRight className="size-4" />
-                        Website
-                    </Button>
+                <Tooltip
+                    content={
+                        project.website ? "Acessar website" : "Indisponível"
+                    }
+                >
+                    <Link href={project?.website || "#"}>
+                        <Button
+                            size="sm"
+                            className={cn(
+                                project.color,
+                                project.website
+                                    ? "opacity-100"
+                                    : "opacity-80 cursor-no-drop"
+                            )}
+                            disabled={!project.website}
+                        >
+                            <ArrowUpRight className="size-4" />
+                            Website
+                        </Button>
+                    </Link>
                 </Tooltip>
             </div>
         </div>

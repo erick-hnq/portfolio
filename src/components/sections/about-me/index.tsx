@@ -44,7 +44,7 @@ export function AboutMeSection() {
                             <Avatar
                                 fallback
                                 className="w-20 h-20 text-large shadow shadow-primary/50"
-                                src="https://github.com/Erick244.png"
+                                src="https://github.com/erick-hnq.png"
                             />
                             <div className="flex flex-col gap-2">
                                 <h1 className="text-white text-2xl font-semibold">
