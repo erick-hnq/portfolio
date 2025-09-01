@@ -165,7 +165,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         project.github ? "Acessar Código" : "Código Privado"
                     }
                 >
-                    <Link href={project?.github || "#"}>
+                    <Link href={project?.github || ""} target="_blank">
                         <Button
                             size="sm"
                             disabled={!project.github}
@@ -186,7 +186,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         project.website ? "Acessar website" : "Indisponível"
                     }
                 >
-                    <Link href={project?.website || "#"}>
+                    <Link href={project?.website || ""} target="_blank">
                         <Button
                             size="sm"
                             className={cn(

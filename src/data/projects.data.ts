@@ -4,7 +4,7 @@ export const projects: Project[] = [
     {
         title: "Ponto PEI",
         description:
-            "A Plataforma Ponto PEI é um sistema inteligente de apoio ao Atendimento Educacional Especializado (AEE), voltado para escolas, professores e equipes pedagógicas que desejam elaborar, revisar e aplicar Planos Educacionais Individualizados (PEI) com o suporte de Inteligência Artificial.",
+            "Criei o SaaS Ponto PEI — a primeira plataforma do nicho de apoio ao Atendimento Educacional Especializado (AEE) para elaboração, revisão e aplicação de PEIs com suporte de Inteligência Artificial. Desenvolvi frontend em Next.js, backend em NestJS e TypeScript com deploy em Vercel/Railway e integração de pagamentos via Stripe. A solução automatiza e personaliza planos educacionais para aumentar a eficiência de professores e equipes pedagógicas.",
         role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",
