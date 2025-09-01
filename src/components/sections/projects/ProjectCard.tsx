@@ -14,6 +14,7 @@ import {
 } from "@heroui/modal";
 import { cn } from "@heroui/react";
 import { Tooltip } from "@heroui/tooltip";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
@@ -25,7 +26,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
-        <div className="sm:max-w-[500px] max-w-[300px] w-full">
+        <motion.div
+            initial={{ filter: "blur(20px)", y: 100 }}
+            whileInView={{ filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="sm:max-w-[500px] max-w-[300px] w-full"
+        >
             <div className="w-full sm:h-64 h-40 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group">
                 <div
                     onClick={onOpen}
@@ -197,6 +203,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     </Link>
                 </Tooltip>
             </div>
-        </div>
+        </motion.div>
     );
 }

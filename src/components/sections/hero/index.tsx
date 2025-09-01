@@ -49,14 +49,14 @@ export function HeroSection() {
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="sm:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
+                            className="sm:text-6xl md:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
                         />
                         <BlurText
                             text="Erick Henrique"
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="sm:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
+                            className="sm:text-6xl md:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                         />
                     </div>
                     <BlurText
@@ -64,7 +64,7 @@ export function HeroSection() {
                         delay={150}
                         animateBy="words"
                         direction="bottom"
-                        className="sm:text-5xl text-xl text-white font-semibold"
+                        className="sm:text-4xl md:text-5xl text-xl text-white font-semibold"
                     />
                     <div className="relative flex items-center justify-center mt-5">
                         <TextType
