@@ -209,7 +209,7 @@ export default function Carousel({
                         : ""
                 }`}
             >
-                <div className="mt-4 flex w-[150px] justify-between px-8">
+                <div className="mt-4 flex w-[150px] justify-center gap-2 px-8 ">
                     {items.map((_, index) => (
                         <motion.div
                             key={index}
@@ -217,10 +217,10 @@ export default function Carousel({
                                 currentIndex % items.length === index
                                     ? round
                                         ? "bg-white"
-                                        : "bg-[#333333]"
+                                        : "bg-white"
                                     : round
-                                    ? "bg-[#555]"
-                                    : "bg-[rgba(51,51,51,0.4)]"
+                                    ? "bg-white/50"
+                                    : "bg-white/50"
                             }`}
                             animate={{
                                 scale:

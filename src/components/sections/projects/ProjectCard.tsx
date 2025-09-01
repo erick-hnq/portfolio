@@ -25,8 +25,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
-        <div className="max-w-[500px] w-full">
-            <div className="w-full h-64 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group">
+        <div className="sm:max-w-[500px] max-w-[300px] w-full">
+            <div className="w-full sm:h-64 h-40 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group">
                 <div
                     onClick={onOpen}
                     className="inset-0 absolute h-full w-full group-hover:opacity-30 opacity-0 bg-gradient-to-r from-black from-10% via-transparent to-black to-90% transition-all duration-300"
@@ -40,16 +40,32 @@ export function ProjectCard({ project }: ProjectCardProps) {
                         muted
                     />
                 ) : (
-                    <Carousel
-                        cardOnClick={() => onOpenChange()}
-                        items={project.carousel}
-                        baseWidth={500}
-                        autoplay={true}
-                        autoplayDelay={3000}
-                        pauseOnHover={true}
-                        loop={false}
-                        round={false}
-                    />
+                    <div>
+                        <div className="sm:block hidden">
+                            <Carousel
+                                cardOnClick={() => onOpenChange()}
+                                items={project.carousel}
+                                baseWidth={500}
+                                autoplay={true}
+                                autoplayDelay={3000}
+                                pauseOnHover={true}
+                                loop={false}
+                                round={false}
+                            />
+                        </div>
+                        <div className="sm:hidden block">
+                            <Carousel
+                                cardOnClick={() => onOpenChange()}
+                                items={project.carousel}
+                                baseWidth={300}
+                                autoplay={true}
+                                autoplayDelay={3000}
+                                pauseOnHover={true}
+                                loop={false}
+                                round={false}
+                            />
+                        </div>
+                    </div>
                 )}
                 <Modal
                     size="5xl"
