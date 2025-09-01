@@ -15,6 +15,7 @@ export const projects: Project[] = [
             "Vercel",
             "Railway",
             "Stripe",
+            "IA",
         ],
         videoSrc: "/videos/ponto-pei.mp4",
         website: "https://www.pontopei.com.br/",
