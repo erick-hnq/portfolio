@@ -37,8 +37,12 @@ export function ProjectsSection() {
                 />
             </div>
             <main className="flex items-start md:flex-row flex-col justify-between w-full gap-20 mt-10">
-                {projects.map((project) => (
-                    <ProjectCard project={project} key={project.title} />
+                {projects.map((project, index) => (
+                    <ProjectCard
+                        project={project}
+                        key={project.title}
+                        index={index}
+                    />
                 ))}
             </main>
         </section>
