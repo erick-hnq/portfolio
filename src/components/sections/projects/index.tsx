@@ -36,7 +36,7 @@ export function ProjectsSection() {
                     className="sm:text-7xl text-4xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                 />
             </div>
-            <main className="flex items-start md:flex-row flex-col justify-between w-full gap-20 mt-10">
+            <main className="flex items-center md:items-start md:flex-row flex-col justify-between w-full gap-20 mt-10">
                 {projects.map((project, index) => (
                     <ProjectCard
                         project={project}

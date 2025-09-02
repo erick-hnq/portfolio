@@ -23,10 +23,6 @@ export function Profile() {
                 delay: 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            whileHover={{
-                scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" },
-            }}
             className="sticky top-16 z-10 flex sm:flex-row flex-col items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
         >
             <motion.div
@@ -57,11 +53,6 @@ export function Profile() {
                         delay: 0.6,
                         ease: "backOut",
                     }}
-                    whileHover={{
-                        scale: 1.1,
-                        rotate: 5,
-                        transition: { duration: 0.3 },
-                    }}
                     whileTap={{ scale: 0.95 }}
                 >
                     <Avatar
@@ -81,23 +72,29 @@ export function Profile() {
                         ease: "easeOut",
                     }}
                 >
-                    <motion.h1
-                        className="text-white text-2xl font-semibold"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{
-                            duration: 0.5,
-                            delay: 1.0,
-                            ease: "easeOut",
-                        }}
-                        whileHover={{
-                            color: "rgb(156 163 175)", // text-gray-400
-                            transition: { duration: 0.2 },
-                        }}
-                    >
-                        Erick - 20 anos
-                    </motion.h1>
+                    <div className="flex flex-wrap-reverse gap-2 items-center">
+                        <motion.h1
+                            className="text-white text-2xl font-semibold"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 1.0,
+                                ease: "easeOut",
+                            }}
+                        >
+                            Erick - 20 anos
+                        </motion.h1>
+                        <div className="bg-green-600/50 py-1 px-3 border border-green-500 rounded-full flex justify-between items-center gap-2">
+                            <div className="relative w-1.5 h-1.5 bg-green-500 rounded-full flex justify-center items-center">
+                                <div className="absolute w-2 h-2 bg-green-500 rounded-full animate-ping" />
+                            </div>
+                            <span className="text-xs text-green-500">
+                                Disponível
+                            </span>
+                        </div>
+                    </div>
                     <motion.p
                         className="text-white/50 text-sm"
                         initial={{ opacity: 0, x: -15 }}
@@ -107,10 +104,6 @@ export function Profile() {
                             duration: 0.5,
                             delay: 1.2,
                             ease: "easeOut",
-                        }}
-                        whileHover={{
-                            color: "rgb(209 213 219)", // text-gray-300
-                            transition: { duration: 0.2 },
                         }}
                     >
                         Desenvolvedor Fullstack
@@ -125,10 +118,6 @@ export function Profile() {
                     duration: 0.6,
                     delay: 1.0,
                     ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 },
                 }}
             >
                 <SocialButtonsGroup className="sm:self-start self-center" />
