@@ -22,33 +22,46 @@ export const projects: Project[] = [
         color: "bg-[#2B7FFF]",
     },
     {
-        title: "Infinity Chat",
+        title: "Infinity Chats",
         description:
-            "A Plataforma Ponto PEI é um sistema inteligente de apoio ao Atendimento Educacional Especializado (AEE), voltado para escolas, professores e equipes pedagógicas que desejam elaborar, revisar e aplicar Planos Educacionais Individualizados (PEI) com o suporte de Inteligência Artificial.",
+            "Desenvolvi o Infinity Chat, um chatbot de IA para atendimento via WhatsApp voltado a provedores. Coordenei front-end (NextJS), back-end (NestJS) e infraestrutura (PostgreSQL, MongoDB, Redis, Docker, Railway) para operação estável, integrei sistemas legados, implementei envio em massa e um painel intuitivo. A solução automatiza cobrança, abertura de ocorrências e roteamento com respostas contextuais, reduzindo trabalho manual e acelerando atendimentos.",
         role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",
             "NestJS",
             "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Docker",
             "TypeScript",
             "TailwindCSS",
-            "Vercel",
+            "Framer Motion",
+            "IA",
             "Railway",
-            "Stripe",
         ],
-        website: "https://www.pontopei.com.br/",
-        color: "bg-[#2B7FFF]",
-        carousel: [
-            {
-                imageSrc:
-                    "https://opengraph.githubassets.com/1/erick-hnq/study",
-                alt: "Teste",
-            },
-            {
-                imageSrc:
-                    "https://opengraph.githubassets.com/1/erick-hnq/study",
-                alt: "Teste 2",
-            },
+        website: "https://www.infinitychats.com/",
+        color: "bg-[#16A34A]",
+        videoSrc: "/videos/infinity-chats.mp4",
+    },
+    {
+        title: "Infinity Chats - Painel de Atendimentos",
+        description:
+            'Desenvolvi um painel de atendimentos integrado ao Infinity Chat que permite aos operadores monitorar em tempo real o que a IA está realizando e intervir quando necessário — enviar faturas, desbloquear clientes e executar ações manuais. O painel suporta áudio, arquivos e texto, com organização de conversas em "Ao vivo", "Aguardando" e "Atendendo", facilitando acompanhamento, transferência e histórico completo das interações.',
+        role: "Desenvolvedor Fullstack",
+        tags: [
+            "NextJS",
+            "NestJS",
+            "PostgreSQL",
+            "Docker",
+            "Socket.io",
+            "AWS S3",
+            "TypeScript",
+            "TailwindCSS",
+            "IA",
+            "Railway",
         ],
+        website: "https://www.infinitychats.com/attendants/auth/sign-in",
+        color: "bg-[#16A34A]",
+        videoSrc: "/videos/infinity-chats-attendants.mp4",
     },
 ];

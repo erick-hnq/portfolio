@@ -84,10 +84,6 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 delay: index * 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            whileHover={{
-                y: -8,
-                transition: { duration: 0.3, ease: "easeOut" },
-            }}
             className="sm:max-w-[500px] max-w-[300px] w-full"
         >
             <motion.div
