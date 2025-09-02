@@ -1,0 +1,138 @@
+"use client";
+
+import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
+import { Avatar } from "@heroui/avatar";
+import { motion } from "framer-motion";
+
+export function Profile() {
+    return (
+        <motion.div
+            initial={{
+                opacity: 0,
+                y: -30,
+                scale: 0.95,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+            }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" },
+            }}
+            className="sticky top-16 z-10 flex sm:flex-row flex-col items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
+        >
+            <motion.div
+                className="flex items-center gap-4"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                    ease: "easeOut",
+                }}
+            >
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        scale: 0,
+                        rotate: -180,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate: 0,
+                    }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.6,
+                        ease: "backOut",
+                    }}
+                    whileHover={{
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <Avatar
+                        fallback
+                        className="w-20 h-20 text-large shadow shadow-primary/50"
+                        src="https://github.com/erick-hnq.png"
+                    />
+                </motion.div>
+                <motion.div
+                    className="flex flex-col gap-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.8,
+                        ease: "easeOut",
+                    }}
+                >
+                    <motion.h1
+                        className="text-white text-2xl font-semibold"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 1.0,
+                            ease: "easeOut",
+                        }}
+                        whileHover={{
+                            color: "rgb(156 163 175)", // text-gray-400
+                            transition: { duration: 0.2 },
+                        }}
+                    >
+                        Erick - 20 anos
+                    </motion.h1>
+                    <motion.p
+                        className="text-white/50 text-sm"
+                        initial={{ opacity: 0, x: -15 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 1.2,
+                            ease: "easeOut",
+                        }}
+                        whileHover={{
+                            color: "rgb(209 213 219)", // text-gray-300
+                            transition: { duration: 0.2 },
+                        }}
+                    >
+                        Desenvolvedor Fullstack
+                    </motion.p>
+                </motion.div>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, x: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                    duration: 0.6,
+                    delay: 1.0,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                }}
+            >
+                <SocialButtonsGroup className="sm:self-start self-center" />
+            </motion.div>
+        </motion.div>
+    );
+}
