@@ -3,6 +3,7 @@
 import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
 import { Avatar } from "@heroui/avatar";
 import { motion } from "framer-motion";
+import { MapPinIcon } from "lucide-react";
 
 export function Profile() {
     return (
@@ -23,10 +24,10 @@ export function Profile() {
                 delay: 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="sticky top-16 z-10 flex sm:flex-row flex-col items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
+            className="sticky top-16 z-10 flex sm:flex-row flex-col md:items-center items-start justify-between md:gap-4 gap-6 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
         >
             <motion.div
-                className="flex items-center gap-4"
+                className="flex items-center  gap-4"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -86,11 +87,11 @@ export function Profile() {
                         >
                             Erick - 20 anos
                         </motion.h1>
-                        <div className="bg-green-600/50 py-1 px-3 border border-green-500 rounded-full flex justify-between items-center gap-2">
-                            <div className="relative w-1.5 h-1.5 bg-green-500 rounded-full flex justify-center items-center">
-                                <div className="absolute w-2 h-2 bg-green-500 rounded-full animate-ping" />
+                        <div className="bg-green-700/50 py-1 px-3 border border-green-700 rounded-full flex justify-between items-center gap-2">
+                            <div className="relative w-1.5 h-1.5 bg-green-600 rounded-full flex justify-center items-center">
+                                <div className="absolute w-2 h-2 bg-green-600 rounded-full animate-ping" />
                             </div>
-                            <span className="text-xs text-green-500">
+                            <span className="text-xs text-green-600">
                                 Disponível
                             </span>
                         </div>
@@ -111,6 +112,7 @@ export function Profile() {
                 </motion.div>
             </motion.div>
             <motion.div
+                className="flex flex-col gap-2 md:items-end items-start"
                 initial={{ opacity: 0, x: 30, scale: 0.9 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
                 viewport={{ once: true }}
@@ -120,7 +122,13 @@ export function Profile() {
                     ease: [0.25, 0.46, 0.45, 0.94],
                 }}
             >
-                <SocialButtonsGroup className="sm:self-start self-center" />
+                <div className="flex items-center gap-2">
+                    <MapPinIcon className="size-4 text-white/50" />
+                    <p className="text-white/50 text-sm">
+                        São José dos Campos, SP
+                    </p>
+                </div>
+                <SocialButtonsGroup />
             </motion.div>
         </motion.div>
     );
