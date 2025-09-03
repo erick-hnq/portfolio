@@ -1,5 +1,5 @@
 import { Button } from "@heroui/button";
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { DownloadIcon, MailIcon } from "lucide-react";
 import Link from "next/link";

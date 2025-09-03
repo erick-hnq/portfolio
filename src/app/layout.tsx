@@ -1,5 +1,5 @@
 import { Header } from "@/components/header";
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import type { Metadata } from "next";
 import { Great_Vibes, Poppins } from "next/font/google";
 import "./globals.css";

@@ -1,4 +1,4 @@
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import Link from "next/link";
 
 interface NavItemProps {

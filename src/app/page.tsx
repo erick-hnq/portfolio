@@ -5,7 +5,7 @@ import { ProjectsSection } from "@/components/sections/projects";
 
 export default function Home() {
     return (
-        <div className="sm:space-y-10 space-y-5">
+        <div className="space-y-10">
             <HeroSection />
             <AboutMeSection />
             <ProjectsSection />

@@ -5,7 +5,7 @@ import GithubIcon from "@/components/icons/GithubIcon";
 import GitIcon from "@/components/icons/GitIcon";
 import { LighthouseIcon } from "@/components/icons/LighthouseIcon";
 import NotionIcon from "@/components/icons/NotionIcon";
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 import {

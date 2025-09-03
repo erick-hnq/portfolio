@@ -12,7 +12,7 @@ import {
     ModalHeader,
     useDisclosure,
 } from "@heroui/modal";
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -84,7 +84,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 delay: index * 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="sm:max-w-[500px] max-w-[300px] w-full"
+            className="sm:max-w-[500px] max-w-[400px] w-full"
         >
             <motion.div
                 variants={imageVariants}
@@ -96,7 +96,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                     delay: index * 0.2 + 0.3,
                     ease: "easeOut",
                 }}
-                className="w-full sm:h-64 h-40 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
+                className="w-full sm:h-64 h-48 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
             >
                 <motion.div
                     onClick={onOpen}
