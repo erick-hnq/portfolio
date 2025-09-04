@@ -64,4 +64,26 @@ export const projects: Project[] = [
         color: "bg-[#16A34A]",
         videoSrc: "/videos/infinity-chats-attendants.mp4",
     },
+    {
+        title: "Portfolio",
+        description:
+            'Desenvolvi um painel de atendimentos integrado ao Infinity Chat que permite aos operadores monitorar em tempo real o que a IA está realizando e intervir quando necessário — enviar faturas, desbloquear clientes e executar ações manuais. O painel suporta áudio, arquivos e texto, com organização de conversas em "Ao vivo", "Aguardando" e "Atendendo", facilitando acompanhamento, transferência e histórico completo das interações.',
+        role: "Desenvolvedor Fullstack",
+        tags: [
+            "NextJS",
+            "NestJS",
+            "PostgreSQL",
+            "Docker",
+            "Socket.io",
+            "AWS S3",
+            "TypeScript",
+            "TailwindCSS",
+            "IA",
+            "Railway",
+        ],
+        website: "https://erickdev.site",
+        color: "bg-[#FFFFFF]",
+        github: "https://github.com/erick-hnq/portfolio",
+        imageSrc: "https://opengraph.githubassets.com/erick-hnq/portfolio",
+    },
 ];

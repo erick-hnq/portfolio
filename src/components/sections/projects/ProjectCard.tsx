@@ -1,7 +1,6 @@
 "use client";
 
 import GithubIcon from "@/components/icons/GithubIcon";
-import Carousel from "@/components/ui/Carousel/Carousel";
 import { Project } from "@/models/interfaces/project.interface";
 import { Button } from "@heroui/button";
 import {
@@ -16,6 +15,7 @@ import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -113,32 +113,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         muted
                     />
                 ) : (
-                    <div>
-                        <div className="sm:block hidden">
-                            <Carousel
-                                cardOnClick={() => onOpenChange()}
-                                items={project.carousel}
-                                baseWidth={500}
-                                autoplay={true}
-                                autoplayDelay={3000}
-                                pauseOnHover={true}
-                                loop={false}
-                                round={false}
-                            />
-                        </div>
-                        <div className="sm:hidden block">
-                            <Carousel
-                                cardOnClick={() => onOpenChange()}
-                                items={project.carousel}
-                                baseWidth={300}
-                                autoplay={true}
-                                autoplayDelay={3000}
-                                pauseOnHover={true}
-                                loop={false}
-                                round={false}
-                            />
-                        </div>
-                    </div>
+                    <Image
+                        src={project.imageSrc || ""}
+                        alt={project.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover pointer-events-none"
+                    />
                 )}
                 <Modal
                     size="5xl"
@@ -170,30 +151,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                                     muted
                                 ></video>
                             ) : (
-                                <div>
-                                    <div className="sm:hidden block">
-                                        <Carousel
-                                            items={project.carousel}
-                                            baseWidth={386}
-                                            autoplay={true}
-                                            autoplayDelay={3000}
-                                            pauseOnHover={true}
-                                            loop={false}
-                                            round={false}
-                                        />
-                                    </div>
-                                    <div className="sm:block hidden">
-                                        <Carousel
-                                            items={project.carousel}
-                                            baseWidth={700}
-                                            autoplay={true}
-                                            autoplayDelay={3000}
-                                            pauseOnHover={true}
-                                            loop={false}
-                                            round={false}
-                                        />
-                                    </div>
-                                </div>
+                                <Image
+                                    src={project.imageSrc || ""}
+                                    alt={project.title}
+                                    width={400}
+                                    height={300}
+                                    className="w-full h-full rounded-lg object-cover pointer-events-none"
+                                />
                             )}
                         </ModalBody>
                         <ModalFooter className="flex flex-wrap justify-start gap-2">
