@@ -4,6 +4,7 @@ import { CopyButton } from "@/components/shared/CopyButton";
 import { Button } from "@heroui/button";
 import { Form } from "@heroui/form";
 import { Input, Textarea } from "@heroui/input";
+import { addToast } from "@heroui/toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { HandIcon, SendIcon } from "lucide-react";
@@ -28,7 +29,27 @@ export function ContactForm() {
         },
     });
 
-    async function onSubmit(data: ContactFormData) {}
+    async function onSubmit(data: ContactFormData) {
+        const response = await fetch("/api/mail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            console.log(await response.text());
+            return;
+        }
+
+        addToast({
+            title: "E-mail enviado com sucesso!",
+            description:
+                "Obrigado por entrar em contato, logo irei te responder!",
+            color: "success",
+        });
+    }
 
     return (
         <motion.div
@@ -314,7 +335,11 @@ export function ContactForm() {
                             className="w-10/12 mx-auto"
                             radius="sm"
                             isLoading={form.formState.isSubmitting}
-                            startContent={<SendIcon className="size-4" />}
+                            startContent={
+                                form.formState.isSubmitting ? null : (
+                                    <SendIcon className="size-4" />
+                                )
+                            }
                         >
                             Enviar
                         </Button>
