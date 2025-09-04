@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { cn } from "@heroui/theme";
 import type { Metadata } from "next";
@@ -39,6 +40,7 @@ export default function RootLayout({
                 <RootProviders>
                     <Header />
                     {children}
+                    <Footer />
                 </RootProviders>
             </body>
         </html>
