@@ -99,10 +99,10 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 className="w-full sm:h-64 h-48 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
             >
                 <motion.div
-                    onClick={onOpen}
                     className="inset-0 absolute h-full w-full group-hover:opacity-30 opacity-0 bg-gradient-to-r from-black from-10% via-transparent to-black to-90% transition-all duration-300"
                     whileHover={{ opacity: 0.3 }}
                     transition={{ duration: 0.3 }}
+                    onClick={onOpen}
                 />
                 {project.videoSrc ? (
                     <video
@@ -111,6 +111,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         autoPlay
                         loop
                         muted
+                        onClick={onOpen}
                     />
                 ) : (
                     <Image
@@ -119,6 +120,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         width={400}
                         height={300}
                         className="w-full h-full object-cover pointer-events-none"
+                        onClick={onOpen}
                     />
                 )}
                 <Modal

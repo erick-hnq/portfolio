@@ -73,6 +73,6 @@ export const projects: Project[] = [
         website: "https://erickdev.site",
         color: "bg-[#FFF] text-[#000]",
         github: "https://github.com/erick-hnq/portfolio",
-        imageSrc: "https://opengraph.githubassets.com/erick-hnq/portfolio",
+        videoSrc: "/videos/portfolio.mp4",
     },
 ];
