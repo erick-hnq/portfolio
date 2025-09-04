@@ -49,7 +49,7 @@ export function Header() {
                     </NavbarItem>
                 ))}
             </NavbarContent>
-            <NavbarMenu className="mt-5">
+            <NavbarMenu className="w-11/12 mx-auto right-0 bg-black/20 flex justify-center">
                 {NAV_ITEMS.map((item, index) => (
                     <NavbarMenuItem
                         isActive={pathname === item.href}
