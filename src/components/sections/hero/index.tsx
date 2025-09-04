@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section>
+        <section id="home" className="scroll-mt-50">
             <div className="w-full h-[600px] absolute top-0 left-0 sm:block hidden">
                 <Prism
                     animationType="rotate"

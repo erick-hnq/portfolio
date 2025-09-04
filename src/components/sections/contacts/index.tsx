@@ -7,7 +7,10 @@ import { FAQ } from "./FAQ";
 
 export function ContactsSection() {
     return (
-        <section className="max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <section
+            id="contacts"
+            className="max-w-5xl mx-auto flex flex-col items-center justify-center scroll-mt-20"
+        >
             <Badge>
                 <PhoneIcon className="size-4" />
                 Contatos

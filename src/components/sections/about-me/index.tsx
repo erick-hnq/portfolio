@@ -8,7 +8,10 @@ import { WhatIDoTimeline } from "./WhatIDoTimeline";
 
 export function AboutMeSection() {
     return (
-        <section className="max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <section
+            id="about-me"
+            className="max-w-5xl mx-auto flex flex-col items-center justify-center scroll-mt-20"
+        >
             <Badge>
                 <GemIcon className="size-4" />
                 Sobre mim

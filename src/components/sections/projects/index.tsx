@@ -6,7 +6,10 @@ import { ProjectCard } from "./ProjectCard";
 
 export function ProjectsSection() {
     return (
-        <section className="max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <section
+            id="projects"
+            className="max-w-5xl mx-auto flex flex-col items-center justify-center scroll-mt-20"
+        >
             <Badge>
                 <BriefcaseIcon className="size-4" />
                 Projetos
