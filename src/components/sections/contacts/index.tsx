@@ -40,7 +40,7 @@ export function ContactsSection() {
                     className="md:text-5xl sm:text-2xl text-xl text-white font-semibold"
                 />
             </div>
-            <main className="mt-15 w-full flex md:flex-row flex-col items-start justify-center gap-10">
+            <main className="mt-15 w-full flex md:flex-row flex-col-reverse items-start justify-center gap-10">
                 <div className="space-y-2 w-full mb-10 md:mb-0">
                     <Profile />
                     <FAQ />

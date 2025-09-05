@@ -134,7 +134,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 >
                     <ModalContent>
                         <ModalHeader className="flex flex-col gap-2">
-                            <div className="flex gap-2 items-center">
+                            <div className="flex flex-wrap gap-2 items-center">
                                 <h1>{project.title}</h1>
                                 <div className="text-xs bg-content3 w-fit px-2 py-2 rounded-full">
                                     {project.role}

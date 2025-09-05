@@ -6,13 +6,15 @@ import TextType from "@/components/ui/TextType/TextType";
 import { techs } from "@/data/techs.data";
 import { Button } from "@heroui/button";
 import { GripIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
     return (
         <section id="home" className="scroll-mt-50">
-            <div className="w-full h-[600px] absolute top-0 left-0 sm:block hidden">
+            <div className="w-full h-[600px] absolute top-0 left-0 lg:block hidden">
                 <Prism
+                    suspendWhenOffscreen
                     animationType="rotate"
                     timeScale={0.5}
                     height={3}
@@ -24,17 +26,13 @@ export function HeroSection() {
                     glow={1}
                 />
             </div>
-            <div className="w-full h-[600px] absolute top-0 left-0 sm:hidden block">
-                <Prism
-                    animationType="rotate"
-                    timeScale={0.5}
-                    height={2.6}
-                    baseWidth={5.5}
-                    scale={2.6}
-                    hueShift={0}
-                    colorFrequency={1}
-                    noise={0}
-                    glow={1}
+            <div className="w-full h-[600px] top-0 left-0 lg:hidden block absolute">
+                <Image
+                    className="object-cover w-full h-[75%]"
+                    src="/images/bg.png"
+                    alt="Hero"
+                    width={1000}
+                    height={1000}
                 />
             </div>
             <main className="relative z-10 mt-20 space-y-10">

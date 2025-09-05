@@ -72,7 +72,7 @@ export function ContactForm() {
             }}
         >
             <motion.div
-                className="flex items-center gap-3 relative"
+                className="flex items-center justify-center gap-3 relative"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

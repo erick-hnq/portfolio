@@ -125,7 +125,7 @@ const steps = [
 
 export function WhatIDoTimeline() {
     return (
-        <div className="text-white  w-full">
+        <div className="text-white  w-full overflow-hidden sm:overflow-visible">
             <div className="max-w-6xl mx-auto">
                 <div className="relative">
                     {/* Linha central vertical */}
@@ -507,6 +507,11 @@ export function WhatIDoTimeline() {
                                                                                 }
                                                                                 className="w-10 h-10 border border-white/20 flex items-center justify-center rounded-full transition-all cursor-pointer hover:border-white/40 hover:bg-white/5"
                                                                             >
+                                                                                <span className="sr-only">
+                                                                                    {
+                                                                                        app.name
+                                                                                    }
+                                                                                </span>
                                                                                 {
                                                                                     app.icon
                                                                                 }
