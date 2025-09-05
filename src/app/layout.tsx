@@ -1,7 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { cn } from "@heroui/theme";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Poppins } from "next/font/google";
 import "./globals.css";
 import RootProviders from "./providers";
@@ -19,9 +19,74 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://erickdev.site"),
     title: "Erick Henrique | Portfolio",
     description:
-        "Olá me chamo Erick Henrique e sou desenvolvedor fullstack web e este é meu portfólio profissional.",
+        "Portfolio profissional de Erick Henrique - Desenvolvedor Fullstack especializado em React, Next.js, NestJS e TypeScript.",
+    keywords: [
+        "desenvolvedor fullstack",
+        "react",
+        "nextjs",
+        "nestjs",
+        "typescript",
+        "javascript",
+        "portfolio",
+        "web developer",
+        "frontend",
+        "backend",
+        "erickdev",
+        "erick-hnq",
+        "erick henrique",
+    ],
+    authors: [{ name: "Erick Henrique", url: "https://erickdev.com" }],
+    creator: "Erick Henrique",
+    publisher: "Erick Henrique",
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+    openGraph: {
+        type: "website",
+        locale: "pt_BR",
+        url: "https://erickdev.site",
+        title: "Erick Henrique | Desenvolvedor Fullstack",
+        description:
+            "Portfolio profissional de Erick Henrique - Desenvolvedor Fullstack especializado em React, Next.js, NestJS e TypeScript.",
+        siteName: "Erick Henrique Portfolio",
+        images: [
+            {
+                url: "/og.png",
+                width: 1200,
+                height: 630,
+                alt: "Erick Henrique - Portfolio",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Erick Henrique | Desenvolvedor Fullstack",
+        description:
+            "Portfolio profissional de Erick Henrique - Desenvolvedor Fullstack especializado em React, Next.js, NestJS e TypeScript.",
+        images: ["/og-image.png"],
+    },
+    alternates: {
+        canonical: "/",
+    },
+};
+
+export const viewport: Viewport = {
+    themeColor: "#000",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
 };
 
 export default function RootLayout({
