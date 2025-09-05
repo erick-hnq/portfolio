@@ -1,5 +1,5 @@
 import { Button } from "@heroui/button";
-import { cn } from "@heroui/react";
+import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { DownloadIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export function SocialButtonsGroup(props: ComponentProps<"div">) {
             {...props}
             className={cn("flex items-center gap-2", props.className)}
         >
-            <Link href="https://github.com/Erick244" target="_blank">
+            <Link href="https://github.com/erick-hnq" target="_blank">
                 <Tooltip content="Acessar Github">
                     <Button
                         variant="bordered"
@@ -49,7 +49,7 @@ export function SocialButtonsGroup(props: ComponentProps<"div">) {
                     </Button>
                 </Tooltip>
             </Link>
-            <Link href="/cv.pdf" download="ERICK-HENRIQUE-CV.pdf">
+            <Link href="/documents/cv.pdf" download="ERICK-HENRIQUE-CV.pdf">
                 <Tooltip content="Download Curriculum">
                     <Button
                         variant="bordered"

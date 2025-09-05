@@ -6,13 +6,15 @@ import TextType from "@/components/ui/TextType/TextType";
 import { techs } from "@/data/techs.data";
 import { Button } from "@heroui/button";
 import { GripIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section>
-            <div className="w-full h-[600px] absolute top-0 left-0 sm:block hidden">
+        <section id="home" className="scroll-mt-50">
+            <div className="w-full h-[600px] absolute top-0 left-0 lg:block hidden">
                 <Prism
+                    suspendWhenOffscreen
                     animationType="rotate"
                     timeScale={0.5}
                     height={3}
@@ -24,17 +26,13 @@ export function HeroSection() {
                     glow={1}
                 />
             </div>
-            <div className="w-full h-[600px] absolute top-0 left-0 sm:hidden block">
-                <Prism
-                    animationType="rotate"
-                    timeScale={0.5}
-                    height={2.6}
-                    baseWidth={5.5}
-                    scale={2.6}
-                    hueShift={0}
-                    colorFrequency={1}
-                    noise={0}
-                    glow={1}
+            <div className="w-full h-[600px] top-0 left-0 lg:hidden block absolute">
+                <Image
+                    className="object-cover w-full h-[75%]"
+                    src="/images/bg.png"
+                    alt="Hero"
+                    width={1000}
+                    height={1000}
                 />
             </div>
             <main className="relative z-10 mt-20 space-y-10">
@@ -49,14 +47,14 @@ export function HeroSection() {
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="sm:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
+                            className="sm:text-6xl md:text-7xl text-3xl sm:mb-5 mb-3 text-white font-semibold break"
                         />
                         <BlurText
                             text="Erick Henrique"
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="sm:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
+                            className="sm:text-6xl md:text-7xl text-3xl text-white font-(family-name:--font-great-vibes) font-light tracking-wide"
                         />
                     </div>
                     <BlurText
@@ -64,7 +62,7 @@ export function HeroSection() {
                         delay={150}
                         animateBy="words"
                         direction="bottom"
-                        className="sm:text-5xl text-xl text-white font-semibold"
+                        className="sm:text-4xl md:text-5xl text-xl text-white font-semibold"
                     />
                     <div className="relative flex items-center justify-center mt-5">
                         <TextType

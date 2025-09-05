@@ -9,15 +9,32 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
-} from "@heroui/react";
+} from "@heroui/navbar";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "../shared/Logo";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const pathname = usePathname();
+    const [active, setActive] = useState<string>("");
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActive(`#${entry.target.id}`);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <Navbar
@@ -38,7 +55,7 @@ export function Header() {
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {NAV_ITEMS.map((item) => (
                     <NavbarItem
-                        isActive={pathname === item.href}
+                        isActive={active === item.href}
                         key={item.href}
                         className="relative data-[active=true]:font-normal group"
                     >
@@ -49,10 +66,10 @@ export function Header() {
                     </NavbarItem>
                 ))}
             </NavbarContent>
-            <NavbarMenu className="mt-5">
+            <NavbarMenu className="w-11/12 mx-auto right-0 bg-transparent rounded-xl mt-2">
                 {NAV_ITEMS.map((item, index) => (
                     <NavbarMenuItem
-                        isActive={pathname === item.href}
+                        isActive={active === item.href}
                         key={`${item}-${index}`}
                         className="relative data-[active=true]:font-normal group"
                     >

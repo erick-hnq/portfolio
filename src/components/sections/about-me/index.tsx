@@ -1,15 +1,17 @@
 import { AnimatedUnderline } from "@/components/shared/AnimatedUnderline";
 import { Badge } from "@/components/shared/Badge";
-import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import FadeContent from "@/components/ui/FadeContent/FadeContent";
-import { Avatar } from "@heroui/avatar";
 import { GemIcon } from "lucide-react";
+import { Profile } from "./Profile";
 import { WhatIDoTimeline } from "./WhatIDoTimeline";
 
 export function AboutMeSection() {
     return (
-        <section className="max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <section
+            id="about-me"
+            className="max-w-5xl mx-auto flex flex-col items-center justify-center scroll-mt-20"
+        >
             <Badge>
                 <GemIcon className="size-4" />
                 Sobre mim
@@ -39,24 +41,7 @@ export function AboutMeSection() {
             />
             <main className="flex flex-col items-center justify-center w-full mt-10">
                 <div className="flex flex-col w-full relative z-10">
-                    <div className="sticky top-16 z-10 flex sm:flex-row flex-col items-center justify-between gap-4 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none">
-                        <div className="flex items-center gap-4 ">
-                            <Avatar
-                                fallback
-                                className="w-20 h-20 text-large shadow shadow-primary/50"
-                                src="https://github.com/Erick244.png"
-                            />
-                            <div className="flex flex-col gap-2">
-                                <h1 className="text-white text-2xl font-semibold">
-                                    Erick - 20 anos
-                                </h1>
-                                <p className="text-white/50 text-sm">
-                                    Desenvolvedor Fullstack
-                                </p>
-                            </div>
-                        </div>
-                        <SocialButtonsGroup className="sm:self-start self-center" />
-                    </div>
+                    <Profile />
                     <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
                         <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">
                             <p className="text-white/50 text-sm">
