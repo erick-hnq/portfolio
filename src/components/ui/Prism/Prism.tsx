@@ -430,6 +430,7 @@ const Prism: React.FC<PrismProps> = ({
             });
             io.observe(container);
             startRAF();
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (container as any).__prismIO = io;
         } else {
             startRAF();
@@ -448,10 +449,12 @@ const Prism: React.FC<PrismProps> = ({
                 window.removeEventListener("blur", onBlur);
             }
             if (suspendWhenOffscreen) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const io = (container as any).__prismIO as
                     | IntersectionObserver
                     | undefined;
                 if (io) io.disconnect();
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 delete (container as any).__prismIO;
             }
             if (gl.canvas.parentElement === container)

@@ -49,7 +49,7 @@ export function SocialButtonsGroup(props: ComponentProps<"div">) {
                     </Button>
                 </Tooltip>
             </Link>
-            <Link href="/cv.pdf" download="ERICK-HENRIQUE-CV.pdf">
+            <Link href="/documents/cv.pdf" download="ERICK-HENRIQUE-CV.pdf">
                 <Tooltip content="Download Curriculum">
                     <Button
                         variant="bordered"

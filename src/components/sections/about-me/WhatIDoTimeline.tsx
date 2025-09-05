@@ -278,7 +278,7 @@ export function WhatIDoTimeline() {
                                                             >
                                                                 <Icon className="w-5 h-5 text-white/70" />
                                                             </motion.div>
-                                                            <motion.h3
+                                                            <motion.h1
                                                                 className="font-semibold text-lg"
                                                                 initial={{
                                                                     opacity: 0,
@@ -303,7 +303,7 @@ export function WhatIDoTimeline() {
                                                             >
                                                                 {step.id}.{" "}
                                                                 {step.title}
-                                                            </motion.h3>
+                                                            </motion.h1>
                                                         </motion.div>
                                                         <motion.p
                                                             className="text-white/70 text-sm leading-relaxed"
