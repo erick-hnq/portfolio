@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
                 pathname: "/**",
             },
         ],
+        minimumCacheTTL: 60,
+    },
+    compress: true,
+    poweredByHeader: false,
+    experimental: {
+        optimizePackageImports: ["framer-motion", "lucide-react"],
     },
 };
 
