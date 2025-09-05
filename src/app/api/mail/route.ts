@@ -7,9 +7,9 @@ const MAX_SEND_PER_IP = 5;
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hora
 
 const contactSchema = z.object({
-    name: z.string().min(2).max(100).trim(),
-    email: z.string().email().max(255),
-    message: z.string().min(10).max(2000).trim(),
+    name: z.string().min(1).max(100).trim(),
+    email: z.email().max(255),
+    message: z.string().min(1).max(2000).trim(),
 });
 
 const transporter = nodemailer.createTransport({

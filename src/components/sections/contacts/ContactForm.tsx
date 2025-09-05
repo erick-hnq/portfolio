@@ -12,9 +12,17 @@ import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
 const contactFormSchema = z.object({
-    name: z.string().min(1, { message: "Nome é obrigatório" }),
-    email: z.email({ message: "Email inválido" }),
-    message: z.string().min(1, { message: "Mensagem é obrigatória" }),
+    name: z
+        .string()
+        .min(1, { message: "Nome é obrigatório" })
+        .max(100, { message: "Nome deve ter no máximo 100 caracteres" }),
+    email: z
+        .email({ message: "Email inválido" })
+        .max(255, { message: "Email deve ter no máximo 255 caracteres" }),
+    message: z
+        .string()
+        .min(1, { message: "Mensagem é obrigatória" })
+        .max(2000, { message: "Mensagem deve ter no máximo 2000 caracteres" }),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
