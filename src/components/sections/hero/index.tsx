@@ -80,7 +80,7 @@ export function HeroSection() {
                     </div>
                 </div>
                 <div className="flex items-center justify-center gap-5">
-                    <Link href="#contact">
+                    <Link href="#contacts">
                         <Button
                             className="text-sm sm:text-base"
                             size="lg"
@@ -90,7 +90,7 @@ export function HeroSection() {
                             Entre em contato
                         </Button>
                     </Link>
-                    <Link href="#about">
+                    <Link href="#about-me">
                         <Button
                             className="bg-white/10 border-white/20 text-white backdrop-blur-sm text-sm sm:text-base"
                             size="lg"
