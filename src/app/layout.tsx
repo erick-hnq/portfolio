@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         siteName: "Erick Henrique Portfolio",
         images: [
             {
-                url: "/og.png",
+                url: "https://www.erickdev.site/images/og.png",
                 width: 1200,
                 height: 630,
                 alt: "Erick Henrique - Portfolio",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
         title: "Erick Henrique | Desenvolvedor Fullstack",
         description:
             "Portfolio profissional de Erick Henrique - Desenvolvedor Fullstack especializado em React, Next.js, NestJS e TypeScript.",
-        images: ["/og-image.png"],
+        images: ["https://www.erickdev.site/images/og.png"],
     },
     alternates: {
         canonical: "/",
