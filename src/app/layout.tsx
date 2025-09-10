@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { cn } from "@heroui/theme";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Poppins } from "next/font/google";
 import "./globals.css";
@@ -108,6 +109,7 @@ export default function RootLayout({
                     <Footer />
                 </RootProviders>
             </body>
+            <GoogleAnalytics gaId="G-CC4DCPHT6N" />
         </html>
     );
 }

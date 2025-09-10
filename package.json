@@ -21,6 +21,7 @@
         "@heroui/toast": "^2.0.15",
         "@heroui/tooltip": "^2.2.21",
         "@hookform/resolvers": "^5.2.1",
+        "@next/third-parties": "^15.5.2",
         "framer-motion": "^12.23.12",
         "gsap": "^3.13.0",
         "lucide-react": "^0.541.0",
