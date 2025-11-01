@@ -17,7 +17,8 @@ export const projects: Project[] = [
             "Stripe",
             "IA",
         ],
-        videoSrc: "/videos/ponto-pei.mp4",
+        videoSrc:
+            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029338/ponto-pei_bnq8io.mp4",
         website: "https://www.pontopei.com.br/",
         color: "bg-[#2B7FFF]",
     },
@@ -41,7 +42,8 @@ export const projects: Project[] = [
         ],
         website: "https://www.infinitychats.com/",
         color: "bg-[#16A34A]",
-        videoSrc: "/videos/infinity-chats.mp4",
+        videoSrc:
+            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029340/infinity-chats_vurwme.mp4",
     },
     {
         title: "Infinity Chats - Painel de Atendimentos",
@@ -62,7 +64,8 @@ export const projects: Project[] = [
         ],
         website: "https://www.infinitychats.com/attendants/auth/sign-in",
         color: "bg-[#16A34A]",
-        videoSrc: "/videos/infinity-chats-attendants.mp4",
+        videoSrc:
+            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029336/infinity-chats-attendants_tiiuaf.mp4",
     },
     {
         title: "Portfolio",
@@ -73,6 +76,7 @@ export const projects: Project[] = [
         website: "https://erickdev.site",
         color: "bg-[#FFF] text-[#000]",
         github: "https://github.com/erick-hnq/portfolio",
-        videoSrc: "/videos/portfolio.mp4",
+        videoSrc:
+            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029335/portfolio_v6lzzd.mp4",
     },
 ];

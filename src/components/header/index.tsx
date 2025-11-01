@@ -39,7 +39,7 @@ export function Header() {
     return (
         <Navbar
             position="sticky"
-            className="z-50 inset-0 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm rounded-full max-w-5xl mx-auto sm:mt-10 mt-5"
+            className="z-50 inset-0 top-5 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm rounded-full max-w-5xl mx-auto sm:mt-10 mt-5"
             onMenuOpenChange={setIsMenuOpen}
         >
             <NavbarContent>
@@ -66,7 +66,7 @@ export function Header() {
                     </NavbarItem>
                 ))}
             </NavbarContent>
-            <NavbarMenu className="w-11/12 mx-auto right-0 bg-transparent rounded-xl mt-2">
+            <NavbarMenu className="right-0 bg-transparent rounded-xl pt-10 mt-6">
                 {NAV_ITEMS.map((item, index) => (
                     <NavbarMenuItem
                         isActive={active === item.href}
