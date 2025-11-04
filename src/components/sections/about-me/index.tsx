@@ -44,7 +44,7 @@ export function AboutMeSection() {
                     <Profile />
                     <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
                         <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">
-                            <p className="text-white/50 text-sm">
+                            <p className="text-white/50 text-sm text-justify sm:text-left">
                                 Aos 20 anos de idade e com{" "}
                                 <AnimatedUnderline>
                                     mais de cinco anos de experiência/estudo em
@@ -54,7 +54,7 @@ export function AboutMeSection() {
                                 web, com foco em tecnologias modernas e práticas
                                 de desenvolvimento ágil.
                             </p>
-                            <p className="text-white/50 text-sm">
+                            <p className="text-white/50 text-sm text-justify sm:text-left">
                                 Atualmente estou trabalhando como desenvolvedor
                                 freelancer,{" "}
                                 <AnimatedUnderline>
@@ -64,7 +64,7 @@ export function AboutMeSection() {
                                 e me fez aprender a lidar com diferentes tipos
                                 de projetos e clientes.
                             </p>
-                            <p className="text-white/50 text-sm">
+                            <p className="text-white/50 text-sm text-justify sm:text-left">
                                 <AnimatedUnderline>
                                     Estou totalmente aberto a novas
                                     oportunidades e desafios,

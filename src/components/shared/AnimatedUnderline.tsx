@@ -9,7 +9,7 @@ export function AnimatedUnderline({ children }: { children: ReactNode }) {
             initial={{ filter: "brightness(0.5)" }}
             animate={{ filter: "brightness(1)" }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-semibold inline-flex relative underline"
+            className="font-semibold inline relative underline"
         >
             {children}
         </motion.strong>
