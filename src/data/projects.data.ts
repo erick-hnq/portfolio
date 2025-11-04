@@ -2,6 +2,23 @@ import { Project } from "@/models/interfaces/project.interface";
 
 export const projects: Project[] = [
     {
+        title: "Click Mão de Obra",
+        description:
+            "A plataforma Click Mão de Obra é um SaaS que permite aos usuários contratar serviços de mão de obra de forma rápida e segura na cidade de Rondonópolis/MT. Infelizmente a plataforma foi descontinuada em cerca de 30% do seu desenvolvimento por motivos financeiros. Caso queira dar continuidade ao projeto, entre em contato comigo, para podermos personalizar o projeto para você.",
+        role: "Desenvolvedor Fullstack - Projeto descontinuado",
+        tags: [
+            "NextJS",
+            "NestJS",
+            "PostgreSQL",
+            "TypeScript",
+            "TailwindCSS",
+            "Mercado Pago",
+        ],
+        videoSrc:
+            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762271158/click-mao-de-obra_g4p04v.mp4",
+        color: "bg-[#1069D7]",
+    },
+    {
         title: "Ponto PEI",
         description:
             "Criei o SaaS Ponto PEI — a primeira plataforma do nicho de apoio ao Atendimento Educacional Especializado (AEE) para elaboração, revisão e aplicação de PEIs com suporte de Inteligência Artificial. Desenvolvi frontend em Next.js, backend em NestJS e TypeScript com deploy em Vercel/Railway e integração de pagamentos via Stripe. A solução automatiza e personaliza planos educacionais para aumentar a eficiência de professores e equipes pedagógicas.",
@@ -66,17 +83,5 @@ export const projects: Project[] = [
         color: "bg-[#16A34A]",
         videoSrc:
             "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029336/infinity-chats-attendants_tiiuaf.mp4",
-    },
-    {
-        title: "Portfolio",
-        description:
-            "Esse é o meu portfolio, onde você pode ver meus projetos e tecnologias que eu uso. Também pode saber mais sobre mim, meus contatos e algumas perguntas frequentes. Esse projeto foi feito com NextJS e TailwindCSS, as animações fiz usando o Framer Motion e hospedado na Vercel.",
-        role: "Desenvolvedor Fullstack",
-        tags: ["NextJS", "TailwindCSS", "Framer Motion", "HeroUI", "Vercel"],
-        website: "https://erickdev.site",
-        color: "bg-[#FFF] text-[#000]",
-        github: "https://github.com/erick-hnq/portfolio",
-        videoSrc:
-            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029335/portfolio_v6lzzd.mp4",
     },
 ];
