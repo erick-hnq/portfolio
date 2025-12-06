@@ -25,7 +25,7 @@ export function Profile() {
                 delay: 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="sticky top-16 z-10 flex sm:flex-row flex-col md:items-center items-start justify-between md:gap-4 gap-6 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
+            className="sticky top-24 z-10 flex sm:flex-row flex-col md:items-center items-start justify-between md:gap-4 gap-6 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
         >
             <motion.div
                 className="flex items-center  gap-4"

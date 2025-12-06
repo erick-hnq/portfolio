@@ -174,7 +174,7 @@ export function WhatIDoTimeline() {
                                             once: true,
                                             margin: "-50px",
                                         }}
-                                        className="sticky top-10 overflow-hidden"
+                                        className="sticky top-24 overflow-hidden"
                                         initial={{
                                             opacity: 0,
                                             x: step.side === "right" ? 80 : -80,

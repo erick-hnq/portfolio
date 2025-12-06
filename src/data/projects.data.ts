@@ -15,7 +15,7 @@ export const projects: Project[] = [
             "Mercado Pago",
         ],
         videoSrc:
-            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762271158/click-mao-de-obra_g4p04v.mp4",
+            "https://def4.pcloud.com/cfZeJsMo77ZAkQ0nT7ZA32C7ZZ5lHD0kZQ5ZZEARZZ8qPm5ZDRZi4Z4zZNRZdYZCHZx8ZR8ZuHZzQZjYZozZYQZ4YZ6arqub1Ni78LCfOqRxK8WBl4o2OV/click-mao-de-obra.mp4",
         color: "bg-[#1069D7]",
     },
     {
@@ -35,7 +35,7 @@ export const projects: Project[] = [
             "IA",
         ],
         videoSrc:
-            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029338/ponto-pei_bnq8io.mp4",
+            "https://def4.pcloud.com/cfZ1q9Mo77Zzs20nT7ZA32C7ZZclHD0kZQ5ZZEARZZuf6jXZaYZTzZp8ZRzZSQZ84ZuYZ78ZCRZ98ZkpZ9QZtzZgpZjO37H6HmvUbqVvkfym0LP55fVuPk/ponto-pei.mp4",
         website: "https://www.pontopei.com.br/",
         color: "bg-[#2B7FFF]",
     },
@@ -60,7 +60,7 @@ export const projects: Project[] = [
         website: "https://www.infinitychats.com/",
         color: "bg-[#16A34A]",
         videoSrc:
-            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029340/infinity-chats_vurwme.mp4",
+            "https://def1.pcloud.com/cfZmCWMo77ZHJ80nT7ZA32C7ZZ9dHD0kZQ5ZZEARZZzgfaXZlRZpHZmRZURZCHZpQZizZSmZiYZpRZ9QZk8ZHzZYzZYBVhj4ipfwuLGiY4izFbh4yQvY07/infinity-chats.mp4",
     },
     {
         title: "Infinity Chats - Painel de Atendimentos",
@@ -82,6 +82,6 @@ export const projects: Project[] = [
         website: "https://www.infinitychats.com/attendants/auth/sign-in",
         color: "bg-[#16A34A]",
         videoSrc:
-            "https://res.cloudinary.com/de7dqidkr/video/upload/v1762029336/infinity-chats-attendants_tiiuaf.mp4",
+            "https://def1.pcloud.com/cfZgbsMo77ZYuQ0nT7ZA32C7ZZ7qHD0kZQ5ZZEARZZ2dQ8XZcLZWQZNLZS4ZNmZjQZ2mZWLZQYZI4ZiFZBRZAYZrpZio4wUiI8LOmNuzMN0rLv0y36lNHy/infinity-chats-attendants.mp4",
     },
 ];
