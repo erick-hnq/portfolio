@@ -36,10 +36,13 @@ export function Header() {
         return () => observer.disconnect();
     }, []);
 
+    console.log(isMenuOpen);
+
     return (
         <Navbar
             position="sticky"
             className="z-50 inset-0 top-5 flex justify-between items-center bg-white/5 border-2 border-white/10 backdrop-blur-sm rounded-full max-w-5xl mx-auto sm:mt-10 mt-5"
+            isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
         >
             <NavbarContent>
@@ -73,7 +76,7 @@ export function Header() {
                         key={`${item}-${index}`}
                         className="relative data-[active=true]:font-normal group"
                     >
-                        <Link className="w-full" href={item.href}>
+                        <Link className="w-full" href={item.href} onClick={() => setIsMenuOpen(false)}>
                             {item.label}
                         </Link>
                         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary w-0 group-data-[active=true]:w-full transition-all duration-300 group-hover:w-full" />

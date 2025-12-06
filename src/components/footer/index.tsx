@@ -25,9 +25,9 @@ export function Footer() {
                     delay: 0.2,
                     ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
             >
-                2025 Erick Henrique. Todos direitos reservados.
+               © {new Date().getFullYear()} Erick Henrique. Todos direitos reservados.
             </motion.p>
             <motion.div
                 className="flex flex-col items-center gap-2"
