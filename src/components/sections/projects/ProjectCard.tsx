@@ -1,7 +1,5 @@
 "use client";
 
-import GithubIcon from "@/components/icons/GithubIcon";
-import { Project } from "@/models/interfaces/project.interface";
 import { Button } from "@heroui/button";
 import {
     Modal,
@@ -17,6 +15,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import GithubIcon from "@/components/icons/GithubIcon";
+import type { Project } from "@/models/interfaces/project.interface";
 
 interface ProjectCardProps {
     project: Project;
