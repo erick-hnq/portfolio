@@ -98,6 +98,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 }}
                 className="w-full sm:h-64 h-48 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
             >
+                {project.isNew && (
+                    <span className="absolute top-3 left-3 z-20 bg-red-500 text-white text-[0.6rem] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        NOVO
+                    </span>
+                )}
                 <motion.div
                     className="inset-0 absolute h-full w-full group-hover:opacity-30 opacity-0 bg-gradient-to-r from-black from-10% via-transparent to-black to-90% transition-all duration-300"
                     whileHover={{ opacity: 0.3 }}

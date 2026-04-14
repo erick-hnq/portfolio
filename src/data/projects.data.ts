@@ -10,6 +10,7 @@ export const projects: Project[] = [
         color: "bg-[#06135d]",
         videoSrc: "https://cdn.erickdev.site/proethic-backoffice.mp4",
         website: "https://www.proethic.com.br/",
+        isNew: true,
     },
     {
         title: "Click Mão de Obra",
