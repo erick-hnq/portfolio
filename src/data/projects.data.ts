@@ -4,7 +4,7 @@ export const projects: Project[] = [
     {
         title: "Proethic BackOffice",
         description:
-            "Aplicação web desenvolvida para a Proethic, empresa especializada em ética corporativa e compliance, que oferece soluções de canal de denúncias para organizações. O sistema centraliza todo o ciclo de vida de relatos éticos — desde o recebimento até a resolução — permitindo que equipes de compliance registrem, acompanhem e analisem ocorrências com eficiência e rastreabilidade. Construído com Next.js, React, TypeScript, HeroUI e Tailwind CSS, o projeto segue uma arquitetura Feature-Based, organizando o código em módulos autocontidos e de fácil manutenção.",
+            "Aplicação web desenvolvida para a Proethic, empresa especializada em ética corporativa e compliance, que oferece soluções de canal de denúncias para organizações. O sistema centraliza todo o ciclo de vida de relatos éticos — desde o recebimento até a resolução — permitindo que equipes de compliance registrem, acompanhem e analisem ocorrências com eficiência e rastreabilidade. O projeto segue uma arquitetura Feature-Based, organizando o código em módulos autocontidos e de fácil manutenção.",
         role: "Desenvolvedor Frontend",
         tags: ["NextJS", "React", "TypeScript", "HeroUI", "TailwindCSS"],
         color: "bg-[#06135d]",
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     {
         title: "Click Mão de Obra",
         description:
-            "A plataforma Click Mão de Obra é um SaaS que permite aos usuários contratar serviços de mão de obra de forma rápida e segura na cidade de Rondonópolis/MT. Infelizmente a plataforma foi descontinuada em cerca de 30% do seu desenvolvimento por motivos financeiros. Caso queira dar continuidade ao projeto, entre em contato comigo, para podermos personalizar o projeto para você.",
+            "A plataforma Click Mão de Obra é um SaaS que permite aos usuários contratar serviços de mão de obra de forma rápida e segura na cidade de Rondonópolis/MT. Infelizmente a plataforma foi descontinuada em cerca de 30% do seu desenvolvimento por motivos pessoais do fundador. Caso queira dar continuidade ao projeto, entre em contato comigo, para podermos personalizar o projeto para você.",
         role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     {
         title: "Infinity Chats",
         description:
-            "Desenvolvi o Infinity Chat, um chatbot de IA com agentes inteligentes para atendimento via WhatsApp voltado a provedores. Coordenei front-end (NextJS), back-end (NestJS) e infraestrutura (PostgreSQL, MongoDB, Redis, Docker, Railway) para operação estável, integrei sistemas legados, implementei envio em massa e um painel intuitivo. A solução conta com agentes de IA especializados que automatizam cobrança, abertura de ocorrências e roteamento com respostas contextuais e tomada de decisões autônoma, reduzindo trabalho manual e acelerando atendimentos com inteligência adaptativa.",
+            "Desenvolvi o Infinity Chat, um chatbot de IA com agentes inteligentes para atendimento via WhatsApp voltado a provedores. Coordenei front-end, back-end e infraestrutura para operação estável, integrei sistemas legados, implementei envio em massa e um painel intuitivo. A solução conta com agentes de IA especializados que automatizam cobrança, abertura de ocorrências e roteamento com respostas contextuais e tomada de decisões autônoma, reduzindo trabalho manual e acelerando atendimentos com inteligência adaptativa.",
         role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",

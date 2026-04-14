@@ -3,7 +3,7 @@
 import { Button } from "@heroui/button";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
-import { BlocksIcon, PhoneIcon } from "lucide-react";
+import { GemIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 import GithubIcon from "@/components/icons/GithubIcon";
 
@@ -77,7 +77,7 @@ export function YourProjectCard({ index = 0 }: YourProjectCardProps) {
                         whileHover={{ scale: 1.2, rotate: 15 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <BlocksIcon strokeWidth={1} className="size-10 text-white/40 group-hover:text-white/70 transition-colors duration-300" />
+                        <GemIcon strokeWidth={1} className="size-10 text-white/40 group-hover:text-white/70 transition-colors duration-300" />
                     </motion.div>
                     <span className="text-white/30 group-hover:text-white/60 text-sm font-medium transition-colors duration-300">
                         SEU PROJETO, SUA IDEIA
