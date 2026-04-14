@@ -2,10 +2,20 @@ import type { Project } from "@/models/interfaces/project.interface";
 
 export const projects: Project[] = [
     {
+        title: "Proethic BackOffice",
+        description:
+            "Aplicação web desenvolvida para a Proethic, empresa especializada em ética corporativa e compliance, que oferece soluções de canal de denúncias para organizações. O sistema centraliza todo o ciclo de vida de relatos éticos — desde o recebimento até a resolução — permitindo que equipes de compliance registrem, acompanhem e analisem ocorrências com eficiência e rastreabilidade. Construído com Next.js, React, TypeScript, HeroUI e Tailwind CSS, o projeto segue uma arquitetura Feature-Based, organizando o código em módulos autocontidos e de fácil manutenção.",
+        role: "Desenvolvedor Frontend",
+        tags: ["NextJS", "React", "TypeScript", "HeroUI", "TailwindCSS"],
+        color: "bg-[#06135d]",
+        videoSrc: "https://cdn.erickdev.site/proethic-backoffice.mp4",
+        website: "https://www.proethic.com.br/",
+    },
+    {
         title: "Click Mão de Obra",
         description:
             "A plataforma Click Mão de Obra é um SaaS que permite aos usuários contratar serviços de mão de obra de forma rápida e segura na cidade de Rondonópolis/MT. Infelizmente a plataforma foi descontinuada em cerca de 30% do seu desenvolvimento por motivos financeiros. Caso queira dar continuidade ao projeto, entre em contato comigo, para podermos personalizar o projeto para você.",
-        role: "Desenvolvedor Fullstack - Projeto descontinuado",
+        role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",
             "NestJS",
@@ -14,7 +24,7 @@ export const projects: Project[] = [
             "TailwindCSS",
             "Mercado Pago",
         ],
-        videoSrc: "/videos/click-mao-de-obra.mp4",
+        videoSrc: "https://cdn.erickdev.site/click-mao-de-obra.mp4",
         color: "bg-[#1069D7]",
     },
     {
@@ -33,14 +43,14 @@ export const projects: Project[] = [
             "Stripe",
             "IA",
         ],
-        videoSrc: "/videos/ponto-pei.mp4",
+        videoSrc: "https://cdn.erickdev.site/ponto-pei.mp4",
         website: "https://www.pontopei.com.br/",
         color: "bg-[#2B7FFF]",
     },
     {
         title: "Infinity Chats",
         description:
-            "Desenvolvi o Infinity Chat, um chatbot de IA para atendimento via WhatsApp voltado a provedores. Coordenei front-end (NextJS), back-end (NestJS) e infraestrutura (PostgreSQL, MongoDB, Redis, Docker, Railway) para operação estável, integrei sistemas legados, implementei envio em massa e um painel intuitivo. A solução automatiza cobrança, abertura de ocorrências e roteamento com respostas contextuais, reduzindo trabalho manual e acelerando atendimentos.",
+            "Desenvolvi o Infinity Chat, um chatbot de IA com agentes inteligentes para atendimento via WhatsApp voltado a provedores. Coordenei front-end (NextJS), back-end (NestJS) e infraestrutura (PostgreSQL, MongoDB, Redis, Docker, Railway) para operação estável, integrei sistemas legados, implementei envio em massa e um painel intuitivo. A solução conta com agentes de IA especializados que automatizam cobrança, abertura de ocorrências e roteamento com respostas contextuais e tomada de decisões autônoma, reduzindo trabalho manual e acelerando atendimentos com inteligência adaptativa.",
         role: "Desenvolvedor Fullstack",
         tags: [
             "NextJS",
@@ -54,10 +64,12 @@ export const projects: Project[] = [
             "Framer Motion",
             "IA",
             "Railway",
+            "WhatsApp Business API",
+            "BullMQ",
         ],
         website: "https://www.infinitychats.com/",
         color: "bg-[#16A34A]",
-        videoSrc: "/videos/infinity-chats.mp4",
+        videoSrc: "https://cdn.erickdev.site/infinity-chats.mp4",
     },
     {
         title: "Infinity Chats - Painel de Atendimentos",
@@ -78,6 +90,6 @@ export const projects: Project[] = [
         ],
         website: "https://www.infinitychats.com/attendants/auth/sign-in",
         color: "bg-[#16A34A]",
-        videoSrc: "/videos/infinity-chats-attendants.mp4",
+        videoSrc: "https://cdn.erickdev.site/infinity-chats-attendants.mp4",
     },
 ];

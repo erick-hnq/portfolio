@@ -209,7 +209,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         delay: index * 0.2 + 0.7,
                         ease: "easeOut",
                     }}
-                    className="mb-2 font-semibold"
+                    className="mb-2 font-semibold text-default-700"
                 >
                     {project.role}
                 </motion.div>

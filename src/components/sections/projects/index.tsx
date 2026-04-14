@@ -1,8 +1,9 @@
+import { BriefcaseIcon } from "lucide-react";
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import { projects } from "@/data/projects.data";
-import { BriefcaseIcon } from "lucide-react";
 import { ProjectCard } from "./ProjectCard";
+import { YourProjectCard } from "./YourProjectCard";
 
 export function ProjectsSection() {
     return (
@@ -41,12 +42,11 @@ export function ProjectsSection() {
             </div>
             <main className="grid md:grid-cols-2 grid-cols-1 md:justify-items-start justify-items-center w-full gap-20 mt-10">
                 {projects.map((project, index) => (
-                    <ProjectCard
-                        project={project}
-                        key={project.title}
-                        index={index}
-                    />
+                    <ProjectCard project={project} key={project.title} index={index} />
                 ))}
+                {projects.length % 2 !== 0 && (
+                    <YourProjectCard index={projects.length} />
+                )}
             </main>
         </section>
     );
