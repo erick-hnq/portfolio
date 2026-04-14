@@ -100,8 +100,8 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 className="w-full sm:h-64 h-48 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
             >
                 {project.isNew && (
-                    <span className="absolute top-3 left-3 z-20 bg-red-500 text-white text-[0.6rem] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                        NOVONovo
+                    <span className="absolute top-3 left-3 z-20 bg-danger text-white text-[0.6rem] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        Novo
                     </span>
                 )}
                 <motion.div
