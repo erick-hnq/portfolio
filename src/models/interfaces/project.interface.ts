@@ -7,5 +7,6 @@ export interface Project {
     imageSrc?: string;
     website?: string;
     github?: string;
+    isNew?: boolean;
     color: string;
 }

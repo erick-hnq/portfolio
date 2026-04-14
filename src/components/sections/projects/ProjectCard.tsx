@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@heroui/badge";
 import { Button } from "@heroui/button";
 import {
     Modal,
@@ -12,7 +13,7 @@ import {
 import { cn } from "@heroui/theme";
 import { Tooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LockIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import GithubIcon from "@/components/icons/GithubIcon";
@@ -98,6 +99,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 }}
                 className="w-full sm:h-64 h-48 bg-content2 rounded-xl cursor-zoom-in relative overflow-hidden group"
             >
+                {project.isNew && (
+                    <span className="absolute top-3 left-3 z-20 bg-danger text-white text-[0.6rem] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        Novo
+                    </span>
+                )}
                 <motion.div
                     className="inset-0 absolute h-full w-full group-hover:opacity-30 opacity-0 bg-gradient-to-r from-black from-10% via-transparent to-black to-90% transition-all duration-300"
                     whileHover={{ opacity: 0.3 }}
@@ -140,9 +146,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                                     {project.role}
                                 </div>
                             </div>
-                            <p className="text-xs font-normal">
-                                {project.description}
-                            </p>
+                            <p className="text-xs font-normal">{project.description}</p>
                         </ModalHeader>
                         <ModalBody className="flex justify-center items-center">
                             {project.videoSrc ? (
@@ -209,7 +213,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                         delay: index * 0.2 + 0.7,
                         ease: "easeOut",
                     }}
-                    className="mb-2 font-semibold"
+                    className="mb-2 font-semibold text-default-700"
                 >
                     {project.role}
                 </motion.div>
@@ -279,24 +283,32 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                     whileTap={{ scale: 0.95 }}
                 >
                     <Tooltip
-                        content={
-                            project.github ? "Acessar Código" : "Código Privado"
-                        }
+                        content={project.github ? "Acessar Código" : "Código Privado"}
                     >
                         <Link href={project?.github || ""} target="_blank">
-                            <Button
-                                size="sm"
-                                disabled={!project.github}
-                                className={cn(
-                                    "bg-content2",
-                                    project.github
-                                        ? "opacity-100"
-                                        : "opacity-80 cursor-no-drop"
-                                )}
+                            <Badge
+                                hidden={!!project?.github}
+                                size="lg"
+                                content={
+                                    <div>
+                                        <LockIcon className="size-2.5" />
+                                    </div>
+                                }
                             >
-                                <GithubIcon />
-                                Código
-                            </Button>
+                                <Button
+                                    size="sm"
+                                    disabled={!project.github}
+                                    className={cn(
+                                        "bg-content2",
+                                        project.github
+                                            ? "opacity-100"
+                                            : "opacity-80 cursor-no-drop",
+                                    )}
+                                >
+                                    <GithubIcon />
+                                    Código
+                                </Button>
+                            </Badge>
                         </Link>
                     </Tooltip>
                 </motion.div>
@@ -308,18 +320,14 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                     whileTap={{ scale: 0.95 }}
                 >
                     <Tooltip
-                        content={
-                            project.website ? "Acessar website" : "Indisponível"
-                        }
+                        content={project.website ? "Acessar website" : "Indisponível"}
                     >
                         <Link href={project?.website || ""} target="_blank">
                             <Button
                                 size="sm"
                                 className={cn(
                                     project.color,
-                                    project.website
-                                        ? "opacity-100"
-                                        : "opacity-80 cursor-no-drop"
+                                    project.website ? "opacity-100" : "opacity-80 cursor-no-drop",
                                 )}
                                 disabled={!project.website}
                             >
