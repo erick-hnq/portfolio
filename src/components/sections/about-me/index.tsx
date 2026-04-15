@@ -1,8 +1,8 @@
+import { GemIcon } from "lucide-react";
 import { AnimatedUnderline } from "@/components/shared/AnimatedUnderline";
 import { Badge } from "@/components/shared/Badge";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import FadeContent from "@/components/ui/FadeContent/FadeContent";
-import { GemIcon } from "lucide-react";
 import { Profile } from "./Profile";
 import { WhatIDoTimeline } from "./WhatIDoTimeline";
 
@@ -45,33 +45,27 @@ export function AboutMeSection() {
                     <FadeContent className="p-[1px] bg-gradient-to-r from-white/10 via-white/50 to-white/10 rounded-xl rounded-t-none">
                         <div className="flex flex-col gap-4 bg-black/80 backdrop-blur-sm rounded-xl rounded-t-none px-4 py-10">
                             <p className="text-white/50 text-sm text-justify sm:text-left">
-                                Aos 20 anos de idade e com{" "}
+                                Aos 21 anos de idade e com{" "}
                                 <AnimatedUnderline>
-                                    mais de cinco anos de experiência/estudo em
-                                    programação,
+                                    mais de seis anos de experiência/estudo em programação,
                                 </AnimatedUnderline>{" "}
-                                hoje venho me especializando em desenvolvimento
-                                web, com foco em tecnologias modernas e práticas
-                                de desenvolvimento ágil.
+                                hoje venho me especializando em desenvolvimento web, com foco em
+                                tecnologias modernas e práticas de desenvolvimento ágil.
                             </p>
                             <p className="text-white/50 text-sm text-justify sm:text-left">
-                                Atualmente estou trabalhando como desenvolvedor
-                                freelancer,{" "}
+                                Atualmente estou trabalhando como desenvolvedor freelancer,{" "}
                                 <AnimatedUnderline>
-                                    o que fortaleceu ainda mais minha
-                                    experiência na área,
+                                    o que fortaleceu ainda mais minha experiência na área,
                                 </AnimatedUnderline>{" "}
-                                e me fez aprender a lidar com diferentes tipos
-                                de projetos e clientes.
+                                e me fez aprender a lidar com diferentes tipos de projetos e
+                                clientes.
                             </p>
                             <p className="text-white/50 text-sm text-justify sm:text-left">
                                 <AnimatedUnderline>
-                                    Estou totalmente aberto a novas
-                                    oportunidades e desafios,
+                                    Estou totalmente aberto a novas oportunidades e desafios,
                                 </AnimatedUnderline>{" "}
-                                então se você tem um projeto em mente ou uma
-                                vaga de emprego que se encaixe com o meu perfil,
-                                não hesite em me contatar!
+                                então se você tem um projeto em mente ou uma vaga de emprego que
+                                se encaixe com o meu perfil, não hesite em me contatar!
                             </p>
                         </div>
                     </FadeContent>
