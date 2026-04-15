@@ -1,10 +1,10 @@
 "use client";
 
-import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
-import ShinyText from "@/components/ui/ShinyText/ShinyText";
 import { Avatar } from "@heroui/avatar";
 import { motion } from "framer-motion";
 import { MapPinIcon } from "lucide-react";
+import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
+import ShinyText from "@/components/ui/ShinyText/ShinyText";
 
 export function Profile() {
     return (
@@ -86,19 +86,13 @@ export function Profile() {
                                 ease: "easeOut",
                             }}
                         >
-                            <ShinyText
-                                disabled={false}
-                                speed={3}
-                                text="Erick - 20 anos"
-                            />
+                            <ShinyText disabled={false} speed={3} text="Erick Henrique" />
                         </motion.h1>
                         <div className="bg-green-700/50 py-1 px-3 border border-green-700 rounded-full flex justify-between items-center gap-2">
                             <div className="relative w-1.5 h-1.5 bg-green-600 rounded-full flex justify-center items-center">
                                 <div className="absolute w-2 h-2 bg-green-600 rounded-full animate-ping" />
                             </div>
-                            <span className="text-xs text-green-600">
-                                Disponível
-                            </span>
+                            <span className="text-xs text-green-600">Disponível</span>
                         </div>
                     </div>
                     <motion.p
@@ -129,9 +123,7 @@ export function Profile() {
             >
                 <div className="flex items-center gap-2">
                     <MapPinIcon className="size-4 text-white/50" />
-                    <p className="text-white/50 text-xs">
-                        São José dos Campos, SP
-                    </p>
+                    <p className="text-white/50 text-xs">São José dos Campos, SP</p>
                 </div>
                 <SocialButtonsGroup />
             </motion.div>
