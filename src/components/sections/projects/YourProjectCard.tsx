@@ -201,7 +201,7 @@ export function YourProjectCard({ index = 0 }: YourProjectCardProps) {
                     whileTap={{ scale: 0.95 }}
                 >
                     <Tooltip content="Ver meu trabalho">
-                        <Link href="https://github.com/erickcelio" target="_blank">
+                        <Link href="https://github.com/erick-hnq" target="_blank">
                             <Button size="sm" className="bg-content2 ">
                                 <GithubIcon />
                                 GitHub
