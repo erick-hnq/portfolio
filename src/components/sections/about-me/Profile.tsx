@@ -1,10 +1,10 @@
 "use client";
 
+import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
+import ShinyText from "@/components/ui/ShinyText/ShinyText";
 import { Avatar } from "@heroui/avatar";
 import { motion } from "framer-motion";
 import { MapPinIcon } from "lucide-react";
-import { SocialButtonsGroup } from "@/components/shared/SocialButtonsGroup";
-import ShinyText from "@/components/ui/ShinyText/ShinyText";
 
 export function Profile() {
     return (
@@ -25,7 +25,7 @@ export function Profile() {
                 delay: 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="sticky top-24 z-10 flex sm:flex-row flex-col md:items-center items-start justify-between md:gap-4 gap-6 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
+            className="sticky top-24 z-20 flex sm:flex-row flex-col md:items-center items-start justify-between md:gap-4 gap-6 bg-gradient-to-b from-content2 to-transparent backdrop-blur-sm p-4 rounded-xl rounded-b-none"
         >
             <motion.div
                 className="flex items-center  gap-4"
@@ -74,7 +74,7 @@ export function Profile() {
                         ease: "easeOut",
                     }}
                 >
-                    <div className="flex flex-wrap-reverse gap-2 items-center">
+                    <div className="flex flex-col-reverse flex-wrap-reverse gap-2 items-end">
                         <motion.h1
                             className="text-white text-2xl font-semibold"
                             initial={{ opacity: 0, x: -20 }}
@@ -86,13 +86,19 @@ export function Profile() {
                                 ease: "easeOut",
                             }}
                         >
-                            <ShinyText disabled={false} speed={3} text="Erick Henrique" />
+                            <ShinyText
+                                disabled={false}
+                                speed={3}
+                                text="Erick Henrique"
+                            />
                         </motion.h1>
-                        <div className="bg-green-700/50 py-1 px-3 border border-green-700 rounded-full flex justify-between items-center gap-2">
-                            <div className="relative w-1.5 h-1.5 bg-green-600 rounded-full flex justify-center items-center">
-                                <div className="absolute w-2 h-2 bg-green-600 rounded-full animate-ping" />
+                        <div className="py-1 px-3 border border-white/80 rounded-full flex justify-between items-center gap-2">
+                            <div className="relative w-1.5 h-1.5 bg-white/80 rounded-full flex justify-center items-center">
+                                <div className="absolute w-2 h-2 bg-white/80 rounded-full animate-ping" />
                             </div>
-                            <span className="text-xs text-green-600">Disponível</span>
+                            <span className="text-xs text-white/80">
+                                Disponível
+                            </span>
                         </div>
                     </div>
                     <motion.p
@@ -123,7 +129,9 @@ export function Profile() {
             >
                 <div className="flex items-center gap-2">
                     <MapPinIcon className="size-4 text-white/50" />
-                    <p className="text-white/50 text-xs">São José dos Campos, SP</p>
+                    <p className="text-white/50 text-xs">
+                        São José dos Campos, SP
+                    </p>
                 </div>
                 <SocialButtonsGroup />
             </motion.div>

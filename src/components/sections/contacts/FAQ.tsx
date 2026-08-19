@@ -108,7 +108,7 @@ const faqItems = [
 export function FAQ() {
     return (
         <motion.div
-            className="md:max-w-full md:w-auto max-w-full w-full"
+            className="w-full"
             initial={{
                 opacity: 0,
                 y: 60,

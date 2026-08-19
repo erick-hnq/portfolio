@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import z from "zod";
 
 const senders = new Map<string, { count: number; lastReset: number }>();
@@ -12,14 +12,7 @@ const contactSchema = z.object({
     message: z.string().min(1).max(2000).trim(),
 });
 
-const transporter = nodemailer.createTransport({
-    host: process.env.MAILTRAP_HOST,
-    port: Number(process.env.MAILTRAP_PORT ?? 2525),
-    auth: {
-        user: process.env.MAILTRAP_USERNAME,
-        pass: process.env.MAILTRAP_PASSWORD,
-    },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
     const headers = {
@@ -48,7 +41,7 @@ export async function POST(request: NextRequest) {
                 JSON.stringify({
                     error: "Limite de envios excedido. Tente novamente em 1 hora.",
                 }),
-                { status: 429, headers }
+                { status: 429, headers },
             );
         }
     } else {
@@ -65,14 +58,23 @@ export async function POST(request: NextRequest) {
             message: validatedData.message.replace(/[<>]/g, ""),
         };
 
-        await transporter.sendMail({
-            from: '"Portfolio Site" <no-reply@erickdev.site>',
-            to: "erickcontato012@gmail.com",
-            subject: `Contato de ${sanitizedData.name} via Portfolio`,
+        const response = await resend.emails.send({
+            from: "Portfolio <portfolio@contact.erickdev.site>",
+            to: "contact@erickdev.site",
             replyTo: sanitizedData.email,
+            subject: `Contato de ${sanitizedData.name} via Portfolio`,
             text: sanitizedData.message,
             html: `<p>${sanitizedData.message.replace(/\n/g, "<br>")}</p>`,
         });
+
+        if (response.error) {
+            return new Response(
+                JSON.stringify({
+                    error: "Não foi possível enviar a mensagem. Por favor tente me contatar por outro meio.",
+                }),
+                { status: 500, headers },
+            );
+        }
 
         const currentSender = senders.get(clientIp)!;
         senders.set(clientIp, {
@@ -82,7 +84,7 @@ export async function POST(request: NextRequest) {
 
         return new Response(
             JSON.stringify({ message: "Mensagem enviada com sucesso!" }),
-            { status: 200, headers }
+            { status: 200, headers },
         );
     } catch (error) {
         if (error instanceof z.ZodError) {
@@ -91,7 +93,7 @@ export async function POST(request: NextRequest) {
                     error: "Dados inválidos",
                     details: error.message,
                 }),
-                { status: 400, headers }
+                { status: 400, headers },
             );
         }
 
@@ -102,7 +104,7 @@ export async function POST(request: NextRequest) {
 
         return new Response(
             JSON.stringify({ error: "Erro interno do servidor" }),
-            { status: 500, headers }
+            { status: 500, headers },
         );
     }
 }
