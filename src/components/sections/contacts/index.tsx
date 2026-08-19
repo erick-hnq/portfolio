@@ -3,7 +3,6 @@ import BlurText from "@/components/ui/BlurText/BlurText";
 import { PhoneIcon } from "lucide-react";
 import { Profile } from "../about-me/Profile";
 import { ContactForm } from "./ContactForm";
-import { FAQ } from "./FAQ";
 
 export function ContactsSection() {
     return (
@@ -40,12 +39,11 @@ export function ContactsSection() {
                     className="md:text-5xl sm:text-2xl text-xl text-white font-semibold"
                 />
             </div>
-            <main className="mt-15 w-full flex md:flex-row flex-col-reverse items-start justify-center gap-10">
+            <main className="mt-15 w-full flex flex-col items-start justify-center gap-10">
                 <div className="space-y-2 w-full mb-10 md:mb-0">
                     <Profile />
-                    <FAQ />
+                    <ContactForm />
                 </div>
-                <ContactForm />
             </main>
         </section>
     );

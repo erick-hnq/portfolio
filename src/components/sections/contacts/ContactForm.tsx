@@ -7,7 +7,7 @@ import { Input, Textarea } from "@heroui/input";
 import { addToast } from "@heroui/toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { HandIcon, SendIcon } from "lucide-react";
+import { SendIcon } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import z from "zod";
 
@@ -61,7 +61,7 @@ export function ContactForm() {
 
     return (
         <motion.div
-            className="flex flex-col gap-4 w-full md:w-[800px]"
+            className="flex flex-col gap-4 w-full"
             initial={{
                 opacity: 0,
                 y: 50,
@@ -79,61 +79,8 @@ export function ContactForm() {
                 ease: [0.25, 0.46, 0.45, 0.94],
             }}
         >
-            <motion.div
-                className="flex items-center justify-center gap-3 relative"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                    ease: "easeOut",
-                }}
-            >
-                <motion.div
-                    initial={{ rotate: -20, scale: 0 }}
-                    whileInView={{ rotate: 12, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.6,
-                        ease: "backOut",
-                    }}
-                    whileHover={{
-                        rotate: 20,
-                        scale: 1.1,
-                        transition: { duration: 0.3 },
-                    }}
-                >
-                    <HandIcon className="size-8 font-bold tracking-tight mb-2 rotate-12" />
-                </motion.div>
-                <motion.h1
-                    className="text-4xl font-bold tracking-tight mb-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.5,
-                        delay: 0.8,
-                        ease: "easeOut",
-                    }}
-                >
-                    Fale Comigo
-                </motion.h1>
-                <motion.div
-                    className="h-px w-full bg-content4 absolute bottom-0 left-0"
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    whileInView={{ scaleX: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.8,
-                        delay: 1.0,
-                        ease: "easeOut",
-                    }}
-                />
-            </motion.div>
             <motion.p
-                className="md:max-w-lg max-w-full text-white/50 text-justify"
+                className="max-w-full text-white/50 text-justify"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -177,11 +124,9 @@ export function ContactForm() {
             >
                 <Input
                     readOnly
-                    value={"erickcontato012@gmail.com"}
+                    value={"contact@erickdev.site"}
                     label="Meu E-mail"
-                    endContent={
-                        <CopyButton text={"erickcontato012@gmail.com"} />
-                    }
+                    endContent={<CopyButton text={"contact@erickdev.site"} />}
                 />
             </motion.div>
             <motion.div
@@ -330,7 +275,7 @@ export function ContactForm() {
                         viewport={{ once: true }}
                         transition={{
                             duration: 0.6,
-                            delay: 3.2,
+                            delay: 2.2,
                             ease: "backOut",
                         }}
                         whileTap={{ scale: 0.98 }}
@@ -340,8 +285,8 @@ export function ContactForm() {
                             variant="shadow"
                             color="primary"
                             type="submit"
-                            className="w-10/12 mx-auto"
-                            radius="sm"
+                            className="w-10/12 h-14 mx-auto"
+                            radius="full"
                             isLoading={form.formState.isSubmitting}
                             startContent={
                                 form.formState.isSubmitting ? null : (
