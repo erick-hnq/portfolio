@@ -59,7 +59,7 @@ export function Profile() {
                 >
                     <Avatar
                         fallback
-                        className="w-20 h-20 text-large shadow shadow-primary/50"
+                        className="w-20 h-20 text-large shadow shadow-primary/50 grayscale"
                         src="https://github.com/erick-hnq.png"
                     />
                 </motion.div>
