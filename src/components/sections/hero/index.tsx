@@ -2,21 +2,22 @@ import { Badge } from "@/components/shared/Badge";
 import Aurora from "@/components/ui/Aurora/Aurora";
 import BlurText from "@/components/ui/BlurText/BlurText";
 import LogoLoop from "@/components/ui/LogoLoop/LogoLoop";
-import TextType from "@/components/ui/TextType/TextType";
+import StaggerText from "@/components/ui/StaggerText";
 import { techs } from "@/data/techs.data";
 import { Button } from "@heroui/button";
-import { GripIcon } from "lucide-react";
+import { ChevronDown, GripIcon } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section id="home" className="scroll-mt-50">
+        <section id="home" className="scroll-mt-50 sm:mt-40">
             <div className="w-full h-[600px] absolute top-0 left-0">
                 <Aurora
                     colorStops={["#fff", "#fff", "#fff"]}
                     blend={0.5}
                     amplitude={1.0}
                     speed={0.5}
+                    fallbackSrc="/images/aurora-bg.webp"
                 />
             </div>
             <main className="relative z-10 mt-20 space-y-10">
@@ -49,17 +50,13 @@ export function HeroSection() {
                         className="sm:text-4xl md:text-5xl text-xl text-white font-semibold"
                     />
                     <div className="relative flex items-center justify-center mt-5">
-                        <TextType
-                            initialDelay={600}
-                            text={
-                                "Apaixonado por tecnologia e programação eu entrego o meu melhor para a sua ideia."
-                            }
-                            typingSpeed={30}
-                            pauseDuration={1500}
-                            showCursor={false}
-                            textColors={["#d8d8d8"]}
-                            className="relative z-10 sm:text-base text-xs text-white/50 text-center px-6 w-fit mx-auto flex items-center gap-2 font-light"
-                        />
+                        <div className="text-center text-sm sm:text-base">
+                            <StaggerText divideBy="word" delay={0.6}>
+                                Apaixonado por tecnologia e programação eu
+                                entrego o meu melhor para a sua ideia.
+                            </StaggerText>
+                        </div>
+
                         <div className="bg-black/50 w-full h-full blur-lg absolute top-0 left-0 z-0" />
                     </div>
                 </div>
@@ -97,6 +94,9 @@ export function HeroSection() {
                     fadeOutColor="#000000"
                     ariaLabel="Technology partners"
                 />
+            </div>
+            <div className="hidden sm:flex justify-center items-center">
+                <ChevronDown className="size-8  text-white/30" />
             </div>
         </section>
     );

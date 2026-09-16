@@ -1,7 +1,37 @@
 "use client";
 
 import { Color, Mesh, Program, Renderer, Triangle } from "ogl";
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+// Calibração do fallback: abaixo de MIN_FPS na janela medida, troca para a imagem.
+const WARMUP_MS = 500;
+const MEASURE_MS = 2000;
+const MIN_FPS = 45;
+const FADE_MS = 500;
+const FALLBACK_KEY = "aurora-fallback";
+
+function canRunAurora() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+        return false;
+    try {
+        if (sessionStorage.getItem(FALLBACK_KEY)) return false;
+    } catch {}
+    const gl = document.createElement("canvas").getContext("webgl2");
+    if (!gl) return false;
+    const info = gl.getExtension("WEBGL_debug_renderer_info");
+    const renderer = String(
+        gl.getParameter(info ? info.UNMASKED_RENDERER_WEBGL : gl.RENDERER),
+    );
+    gl.getExtension("WEBGL_lose_context")?.loseContext();
+    return !/swiftshader|llvmpipe|basic render driver/i.test(renderer);
+}
+
+const toRgb = (stops: string[]) =>
+    stops.map((hex) => {
+        const c = new Color(hex);
+        return [c.r, c.g, c.b];
+    });
 
 const VERT = `#version 300 es
 in vec2 position;
@@ -115,6 +145,7 @@ interface AuroraProps {
     blend?: number;
     time?: number;
     speed?: number;
+    fallbackSrc: string;
 }
 
 export default function Aurora(props: AuroraProps) {
@@ -122,15 +153,17 @@ export default function Aurora(props: AuroraProps) {
         colorStops = ["#5227FF", "#7cff67", "#5227FF"],
         amplitude = 1.0,
         blend = 0.5,
+        fallbackSrc,
     } = props;
     const propsRef = useRef<AuroraProps>(props);
     propsRef.current = props;
 
     const ctnDom = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
 
     useEffect(() => {
         const ctn = ctnDom.current;
-        if (!ctn) return;
+        if (!ctn || !canRunAurora()) return;
 
         const renderer = new Renderer({
             alpha: true,
@@ -161,18 +194,14 @@ export default function Aurora(props: AuroraProps) {
             delete geometry.attributes.uv;
         }
 
-        const colorStopsArray = colorStops.map((hex) => {
-            const c = new Color(hex);
-            return [c.r, c.g, c.b];
-        });
-
+        let lastStops = colorStops;
         program = new Program(gl, {
             vertex: VERT,
             fragment: FRAG,
             uniforms: {
                 uTime: { value: 0 },
                 uAmplitude: { value: amplitude },
-                uColorStops: { value: colorStopsArray },
+                uColorStops: { value: toRgb(colorStops) },
                 uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
                 uBlend: { value: blend },
             },
@@ -182,8 +211,70 @@ export default function Aurora(props: AuroraProps) {
         ctn.appendChild(gl.canvas);
 
         let animateId = 0;
+        let inView = false;
+        let failed = false;
+        let shown = false;
+        let decided = false;
+        let lastT: number | undefined;
+        let activeMs = 0;
+        let frames = 0;
+        let fadeTimer: ReturnType<typeof setTimeout> | undefined;
+
+        const stop = () => {
+            cancelAnimationFrame(animateId);
+            animateId = 0;
+        };
+        // Só roda (e mede) com a hero visível e a aba ativa.
+        const start = () => {
+            if (animateId || failed || !inView || document.hidden) return;
+            lastT = undefined;
+            animateId = requestAnimationFrame(update);
+        };
+        const onVisibility = () => (document.hidden ? stop() : start());
+        const observer = new IntersectionObserver(([entry]) => {
+            inView = entry.isIntersecting;
+            if (inView) start();
+            else stop();
+        });
+
+        const destroy = () => {
+            stop();
+            observer.disconnect();
+            document.removeEventListener("visibilitychange", onVisibility);
+            window.removeEventListener("resize", resize);
+            if (gl.canvas.parentNode === ctn) {
+                ctn.removeChild(gl.canvas);
+            }
+            gl.getExtension("WEBGL_lose_context")?.loseContext();
+        };
+
+        const fail = () => {
+            failed = true;
+            stop();
+            try {
+                sessionStorage.setItem(FALLBACK_KEY, "1");
+            } catch {}
+            setVisible(false);
+            fadeTimer = setTimeout(destroy, FADE_MS);
+        };
+
         const update = (t: number) => {
             animateId = requestAnimationFrame(update);
+
+            if (!decided && lastT !== undefined) {
+                activeMs += t - lastT;
+                if (activeMs > WARMUP_MS) frames++;
+                if (activeMs >= WARMUP_MS + MEASURE_MS) {
+                    decided = true;
+                    const fps = (frames * 1000) / (activeMs - WARMUP_MS);
+                    if (process.env.NODE_ENV === "development") {
+                        console.debug(`[Aurora] ${fps.toFixed(1)} fps`);
+                    }
+                    if (fps < MIN_FPS) return fail();
+                }
+            }
+            lastT = t;
+
             const { time = t * 0.01, speed = 1.0 } = propsRef.current;
             if (program) {
                 program.uniforms.uTime.value = time * speed * 0.1;
@@ -191,28 +282,43 @@ export default function Aurora(props: AuroraProps) {
                     propsRef.current.amplitude ?? 1.0;
                 program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
                 const stops = propsRef.current.colorStops ?? colorStops;
-                program.uniforms.uColorStops.value = stops.map(
-                    (hex: string) => {
-                        const c = new Color(hex);
-                        return [c.r, c.g, c.b];
-                    },
-                );
+                if (stops !== lastStops) {
+                    lastStops = stops;
+                    program.uniforms.uColorStops.value = toRgb(stops);
+                }
                 renderer.render({ scene: mesh });
             }
+            if (!shown) {
+                shown = true;
+                setVisible(true);
+            }
         };
-        animateId = requestAnimationFrame(update);
+
+        document.addEventListener("visibilitychange", onVisibility);
+        observer.observe(ctn);
 
         resize();
 
         return () => {
-            cancelAnimationFrame(animateId);
-            window.removeEventListener("resize", resize);
-            if (ctn && gl.canvas.parentNode === ctn) {
-                ctn.removeChild(gl.canvas);
-            }
-            gl.getExtension("WEBGL_lose_context")?.loseContext();
+            clearTimeout(fadeTimer);
+            destroy();
         };
     }, [amplitude]);
 
-    return <div ref={ctnDom} className="w-full h-full" />;
+    return (
+        <div className="relative w-full h-full">
+            <Image
+                src={fallbackSrc}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className={`object-cover object-top transition-opacity duration-500 ${visible ? "opacity-0" : "opacity-100"}`}
+            />
+            <div
+                ref={ctnDom}
+                className={`absolute inset-0 transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+            />
+        </div>
+    );
 }

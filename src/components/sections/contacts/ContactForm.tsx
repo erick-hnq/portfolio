@@ -286,7 +286,6 @@ export function ContactForm() {
                             color="primary"
                             type="submit"
                             className="w-10/12 h-14 mx-auto"
-                            radius="full"
                             isLoading={form.formState.isSubmitting}
                             startContent={
                                 form.formState.isSubmitting ? null : (
